@@ -15,6 +15,7 @@
         <link rel="canonical" href="https://data-privacy-stack.github.io/presidio/samples/python/customizing_presidio_analyzer/">
       
       
+      
         <link rel="prev" href="../presidio_notebook/">
       
       
@@ -25,23 +26,23 @@
       
       
       <link rel="icon" href="../../../assets/dps-icon.svg">
-      <meta name="generator" content="zensical-0.0.46">
+      <meta name="generator" content="zensical-0.0.72">
     
     
       
-        <title>Customizing the PII analysis process in Presidio - Presidio</title>
+        <title>Customizing Presidio Analyzer - Presidio</title>
       
     
     
       
         
       
-      <link rel="stylesheet" href="../../../assets/stylesheets/modern/main.19d3147f.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/modern/main.4ab2de0c.min.css">
       
         
           
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/modern/palette.dfe2e883.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/modern/palette.b60ce83d.min.css">
       
       
 
@@ -208,14 +209,11 @@
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
-    <label class="md-overlay" for="__drawer" aria-label="Navigation"></label>
+    <label class="md-overlay" for="__drawer" aria-hidden="true"></label>
     <div data-md-component="skip">
-      
-        
-        <a href="#path-to-notebook-httpswwwgithubcomdata-privacy-stackpresidioblobmaindocssamplespythoncustomizing_presidio_analyzeripynb" class="md-skip">
-          Skip to content
-        </a>
-      
+      <a href="#__skip" class="md-skip">
+        Skip to content
+      </a>
     </div>
     <div data-md-component="announce">
       
@@ -233,9 +231,10 @@
   <img src="../../../assets/dps-icon.svg" alt="Presidio">
 
     </a>
-    <label class="md-header__button md-icon" for="__drawer" aria-label="Navigation">
+    <label class="md-header__button md-icon" for="__drawer">
       
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-menu" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
+      <span class="md-visually-hidden">Navigation</span>
     </label>
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
@@ -247,7 +246,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Customizing the PII analysis process in Presidio
+              Customizing Presidio Analyzer
             
           </span>
         </div>
@@ -287,9 +286,10 @@
     
       
       
-        <label class="md-header__button md-icon" for="__search" aria-label="Search">
+        <label class="md-header__button md-icon" for="__search">
           
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-search" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+          <span class="md-visually-hidden">Search</span>
         </label>
         <div class="md-search" data-md-component="search" role="dialog" aria-label="Search">
   <button type="button" class="md-search__button">
@@ -303,7 +303,7 @@
         <a href="https://github.com/data-privacy-stack/presidio/" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M216.5 362.5c-66-8-112.5-55.5-112.5-117 0-25 9-52 24-70-6.5-16.5-5.5-51.5 2-66 20-2.5 47 8 63 22.5 19-6 39-9 63.5-9s44.5 3 62.5 8.5c15.5-14 43-24.5 63-22 7 13.5 8 48.5 1.5 65.5 16 19 24.5 44.5 24.5 70.5 0 61.5-46.5 108-113.5 116.5 17 11 28.5 35 28.5 62.5v52c0 15 12.5 23.5 27.5 17.5C441 459.5 512 369 512 257 512 115.5 397 0 255.5 0S0 115.5 0 257c0 111 70.5 203 165.5 237.5 13.5 5 26.5-4 26.5-17.5v-40c-7 3-16 5-24 5-33 0-52.5-18-66.5-51.5-5.5-13.5-11.5-21.5-23-23-6-.5-8-3-8-6 0-6 10-10.5 20-10.5 14.5 0 27 9 40 27.5 10 14.5 20.5 21 33 21s20.5-4.5 32-16c8.5-8.5 15-16 21-21"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -493,7 +493,7 @@
       <a href="https://github.com/data-privacy-stack/presidio/" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M216.5 362.5c-66-8-112.5-55.5-112.5-117 0-25 9-52 24-70-6.5-16.5-5.5-51.5 2-66 20-2.5 47 8 63 22.5 19-6 39-9 63.5-9s44.5 3 62.5 8.5c15.5-14 43-24.5 63-22 7 13.5 8 48.5 1.5 65.5 16 19 24.5 44.5 24.5 70.5 0 61.5-46.5 108-113.5 116.5 17 11 28.5 35 28.5 62.5v52c0 15 12.5 23.5 27.5 17.5C441 459.5 512 369 512 257 512 115.5 397 0 255.5 0S0 115.5 0 257c0 111 70.5 203 165.5 237.5 13.5 5 26.5-4 26.5-17.5v-40c-7 3-16 5-24 5-33 0-52.5-18-66.5-51.5-5.5-13.5-11.5-21.5-23-23-6-.5-8-3-8-6 0-6 10-10.5 20-10.5 14.5 0 27 9 40 27.5 10 14.5 20.5 21 33 21s20.5-4.5 32-16c8.5-8.5 15-16 21-21"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -541,18 +541,19 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_1">
-            <span class="md-nav__icon md-icon"></span>
-            
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_1">
+              <span class="md-nav__icon md-icon"></span>
+              
   
   Presidio
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
               
                 
+                  
   
   
   
@@ -576,10 +577,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -603,10 +604,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -630,10 +631,11 @@
     </li>
   
 
+                
               
-            
-          </ul>
-        </nav>
+            </ul>
+          </nav>
+        
       
     </li>
   
@@ -677,18 +679,19 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2">
-            <span class="md-nav__icon md-icon"></span>
-            
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_2">
+              <span class="md-nav__icon md-icon"></span>
+              
   
   Quick start
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
               
                 
+                  
   
   
   
@@ -712,10 +715,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -739,10 +742,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -766,10 +769,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -793,10 +796,11 @@
     </li>
   
 
+                
               
-            
-          </ul>
-        </nav>
+            </ul>
+          </nav>
+        
       
     </li>
   
@@ -840,18 +844,19 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3">
-            <span class="md-nav__icon md-icon"></span>
-            
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_3">
+              <span class="md-nav__icon md-icon"></span>
+              
   
   Learn Presidio
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
               
                 
+                  
   
   
   
@@ -875,10 +880,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -902,10 +907,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -942,18 +947,19 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_3">
-            <span class="md-nav__icon md-icon"></span>
-            
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_3_3">
+              <span class="md-nav__icon md-icon"></span>
+              
   
   Tutorial
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
               
                 
+                  
   
   
   
@@ -977,10 +983,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -1004,10 +1010,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -1031,10 +1037,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -1058,10 +1064,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -1085,10 +1091,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -1112,10 +1118,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -1139,10 +1145,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -1166,10 +1172,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -1193,10 +1199,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -1220,10 +1226,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -1247,10 +1253,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -1274,10 +1280,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -1301,10 +1307,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -1328,10 +1334,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -1355,18 +1361,19 @@
     </li>
   
 
+                
               
-            
-          </ul>
-        </nav>
+            </ul>
+          </nav>
+        
       
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -1403,18 +1410,19 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_4">
-            <span class="md-nav__icon md-icon"></span>
-            
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_3_4">
+              <span class="md-nav__icon md-icon"></span>
+              
   
   Text de-identification
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
               
                 
+                  
   
   
   
@@ -1438,10 +1446,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -1478,18 +1486,19 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_4_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_4_2">
-            <span class="md-nav__icon md-icon"></span>
-            
+        
+          <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_4_2_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_3_4_2">
+              <span class="md-nav__icon md-icon"></span>
+              
   
   Presidio Analyzer
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
               
                 
+                  
   
   
   
@@ -1513,10 +1522,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -1553,18 +1562,19 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_4_2_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_4_2_2">
-            <span class="md-nav__icon md-icon"></span>
-            
+        
+          <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_4_2_2_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_3_4_2_2">
+              <span class="md-nav__icon md-icon"></span>
+              
   
   Developing PII recognizers
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
               
                 
+                  
   
   
   
@@ -1588,10 +1598,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -1615,10 +1625,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -1642,18 +1652,19 @@
     </li>
   
 
+                
               
-            
-          </ul>
-        </nav>
+            </ul>
+          </nav>
+        
       
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -1677,10 +1688,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -1704,10 +1715,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -1744,18 +1755,19 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_4_2_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_4_2_5">
-            <span class="md-nav__icon md-icon"></span>
-            
+        
+          <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_4_2_5_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_3_4_2_5">
+              <span class="md-nav__icon md-icon"></span>
+              
   
   Customizing the NLP model
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
               
                 
+                  
   
   
   
@@ -1779,10 +1791,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -1806,10 +1818,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -1833,10 +1845,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -1860,18 +1872,19 @@
     </li>
   
 
+                
               
-            
-          </ul>
-        </nav>
+            </ul>
+          </nav>
+        
       
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -1895,10 +1908,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -1922,18 +1935,19 @@
     </li>
   
 
+                
               
-            
-          </ul>
-        </nav>
+            </ul>
+          </nav>
+        
       
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -1970,18 +1984,19 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_4_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_4_3">
-            <span class="md-nav__icon md-icon"></span>
-            
+        
+          <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_4_3_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_3_4_3">
+              <span class="md-nav__icon md-icon"></span>
+              
   
   Presidio Anonymizer
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
               
                 
+                  
   
   
   
@@ -2005,10 +2020,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -2032,26 +2047,28 @@
     </li>
   
 
+                
               
-            
-          </ul>
-        </nav>
+            </ul>
+          </nav>
+        
       
     </li>
   
 
+                
               
-            
-          </ul>
-        </nav>
+            </ul>
+          </nav>
+        
       
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -2075,10 +2092,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -2115,18 +2132,19 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_6">
-            <span class="md-nav__icon md-icon"></span>
-            
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_3_6">
+              <span class="md-nav__icon md-icon"></span>
+              
   
   Image de-identification
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
               
                 
+                  
   
   
   
@@ -2150,10 +2168,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -2177,18 +2195,19 @@
     </li>
   
 
+                
               
-            
-          </ul>
-        </nav>
+            </ul>
+          </nav>
+        
       
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -2225,18 +2244,19 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_7">
-            <span class="md-nav__icon md-icon"></span>
-            
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_3_7">
+              <span class="md-nav__icon md-icon"></span>
+              
   
   Structured and Semi-structured
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
               
                 
+                  
   
   
   
@@ -2260,18 +2280,19 @@
     </li>
   
 
+                
               
-            
-          </ul>
-        </nav>
+            </ul>
+          </nav>
+        
       
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -2295,10 +2316,11 @@
     </li>
   
 
+                
               
-            
-          </ul>
-        </nav>
+            </ul>
+          </nav>
+        
       
     </li>
   
@@ -2342,18 +2364,19 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4">
-            <span class="md-nav__icon md-icon"></span>
-            
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_4">
+              <span class="md-nav__icon md-icon"></span>
+              
   
   Resources
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
               
                 
+                  
   
   
   
@@ -2377,10 +2400,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -2404,10 +2427,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -2431,10 +2454,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -2458,10 +2481,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -2485,10 +2508,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -2512,10 +2535,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -2539,10 +2562,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -2579,18 +2602,19 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_8">
-            <span class="md-nav__icon md-icon"></span>
-            
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_4_8">
+              <span class="md-nav__icon md-icon"></span>
+              
   
   Python API reference
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
               
                 
+                  
   
   
   
@@ -2614,10 +2638,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -2641,10 +2665,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -2668,10 +2692,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -2695,10 +2719,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -2722,18 +2746,19 @@
     </li>
   
 
+                
               
-            
-          </ul>
-        </nav>
+            </ul>
+          </nav>
+        
       
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -2757,10 +2782,11 @@
     </li>
   
 
+                
               
-            
-          </ul>
-        </nav>
+            </ul>
+          </nav>
+        
       
     </li>
   
@@ -2804,18 +2830,19 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5">
-            <span class="md-nav__icon md-icon"></span>
-            
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_5">
+              <span class="md-nav__icon md-icon"></span>
+              
   
   Recipes
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
               
                 
+                  
   
   
   
@@ -2839,10 +2866,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -2866,10 +2893,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -2893,10 +2920,11 @@
     </li>
   
 
+                
               
-            
-          </ul>
-        </nav>
+            </ul>
+          </nav>
+        
       
     </li>
   
@@ -2945,18 +2973,19 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_6">
-            <span class="md-nav__icon md-icon"></span>
-            
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+            <label class="md-nav__title" for="__nav_6">
+              <span class="md-nav__icon md-icon"></span>
+              
   
   Samples
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
               
                 
+                  
   
   
   
@@ -2980,10 +3009,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
     
@@ -3022,18 +3051,19 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_6_2">
-            <span class="md-nav__icon md-icon"></span>
-            
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="true">
+            <label class="md-nav__title" for="__nav_6_2">
+              <span class="md-nav__icon md-icon"></span>
+              
   
   Text
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
               
                 
+                  
   
   
   
@@ -3057,10 +3087,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
     
@@ -3288,10 +3318,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -3315,10 +3345,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -3342,10 +3372,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -3369,10 +3399,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -3396,10 +3426,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -3423,10 +3453,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -3450,10 +3480,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -3477,10 +3507,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -3504,10 +3534,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -3531,10 +3561,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -3558,10 +3588,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -3585,10 +3615,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -3612,10 +3642,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -3639,10 +3669,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -3666,10 +3696,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -3693,10 +3723,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -3720,10 +3750,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -3747,18 +3777,19 @@
     </li>
   
 
+                
               
-            
-          </ul>
-        </nav>
+            </ul>
+          </nav>
+        
       
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -3795,18 +3826,19 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_3">
-            <span class="md-nav__icon md-icon"></span>
-            
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_6_3">
+              <span class="md-nav__icon md-icon"></span>
+              
   
   Data
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
               
                 
+                  
   
   
   
@@ -3830,10 +3862,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -3857,10 +3889,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -3884,18 +3916,19 @@
     </li>
   
 
+                
               
-            
-          </ul>
-        </nav>
+            </ul>
+          </nav>
+        
       
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -3932,18 +3965,19 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_4">
-            <span class="md-nav__icon md-icon"></span>
-            
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_6_4">
+              <span class="md-nav__icon md-icon"></span>
+              
   
   Images
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
               
                 
+                  
   
   
   
@@ -3967,10 +4001,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -3994,10 +4028,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -4021,10 +4055,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -4048,18 +4082,19 @@
     </li>
   
 
+                
               
-            
-          </ul>
-        </nav>
+            </ul>
+          </nav>
+        
       
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -4096,18 +4131,19 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_5">
-            <span class="md-nav__icon md-icon"></span>
-            
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_5_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_6_5">
+              <span class="md-nav__icon md-icon"></span>
+              
   
   PDF
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
               
                 
+                  
   
   
   
@@ -4131,18 +4167,19 @@
     </li>
   
 
+                
               
-            
-          </ul>
-        </nav>
+            </ul>
+          </nav>
+        
       
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -4179,18 +4216,19 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_6">
-            <span class="md-nav__icon md-icon"></span>
-            
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_6_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_6_6">
+              <span class="md-nav__icon md-icon"></span>
+              
   
   Deployment
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
               
                 
+                  
   
   
   
@@ -4214,10 +4252,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -4241,10 +4279,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -4268,10 +4306,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -4295,10 +4333,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -4322,10 +4360,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -4362,18 +4400,19 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_6_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_6_6">
-            <span class="md-nav__icon md-icon"></span>
-            
+        
+          <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_6_6_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_6_6_6">
+              <span class="md-nav__icon md-icon"></span>
+              
   
   Azure Data Factory
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
               
                 
+                  
   
   
   
@@ -4397,10 +4436,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -4424,10 +4463,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -4451,18 +4490,19 @@
     </li>
   
 
+                
               
-            
-          </ul>
-        </nav>
+            </ul>
+          </nav>
+        
       
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -4486,18 +4526,46 @@
     </li>
   
 
+                
               
-            
-          </ul>
-        </nav>
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docker/aisix/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Protect LLM requests with Presidio and AISIX AI Gateway
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
       
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -4534,18 +4602,19 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_7">
-            <span class="md-nav__icon md-icon"></span>
-            
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_7_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_6_7">
+              <span class="md-nav__icon md-icon"></span>
+              
   
   Demo app
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
               
                 
+                  
   
   
   
@@ -4569,18 +4638,20 @@
     </li>
   
 
+                
               
-            
-          </ul>
-        </nav>
+            </ul>
+          </nav>
+        
       
     </li>
   
 
+                
               
-            
-          </ul>
-        </nav>
+            </ul>
+          </nav>
+        
       
     </li>
   
@@ -4795,11 +4866,13 @@
             <div class="md-content" data-md-component="content">
               
               <article class="md-content__inner md-typeset">
+                <a id="__skip" tabindex="-1"></a>
                 
 
 
 
                   
+
   
   
 
@@ -4841,37 +4914,37 @@
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">print_analyzer_results</span><span class="p">(</span><span class="n">results</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">RecognizerResult</span><span class="p">],</span> <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Print the results in a human readable way.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""Print the results in a human readable way."""</span>
 
     <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">result</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">results</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Result </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">:&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; </span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="s2">, text: </span><span class="si">{</span><span class="n">text</span><span class="p">[</span><span class="n">result</span><span class="o">.</span><span class="n">start</span><span class="p">:</span><span class="n">result</span><span class="o">.</span><span class="n">end</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Result </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">:"</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">" </span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="s2">, text: </span><span class="si">{</span><span class="n">text</span><span class="p">[</span><span class="n">result</span><span class="o">.</span><span class="n">start</span><span class="p">:</span><span class="n">result</span><span class="o">.</span><span class="n">end</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="n">result</span><span class="o">.</span><span class="n">analysis_explanation</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; </span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">analysis_explanation</span><span class="o">.</span><span class="n">textual_explanation</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">" </span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">analysis_explanation</span><span class="o">.</span><span class="n">textual_explanation</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </code></pre></div>
 <h3 id="example-1-deny-list-based-pii-recognition">Example 1: Deny-list based PII recognition</h3>
 <p>In this example, we will pass a short list of tokens which should be marked as PII if detected.
 First, let's define the tokens we want to treat as PII. In this case it would be a list of titles:</p>
 <div class="highlight"><pre><span></span><code><span class="n">titles_list</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s2">&quot;Sir&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;Ma&#39;am&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;Madam&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;Mr.&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;Mrs.&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;Ms.&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;Miss&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;Dr.&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;Professor&quot;</span><span class="p">,</span>
+    <span class="s2">"Sir"</span><span class="p">,</span>
+    <span class="s2">"Ma'am"</span><span class="p">,</span>
+    <span class="s2">"Madam"</span><span class="p">,</span>
+    <span class="s2">"Mr."</span><span class="p">,</span>
+    <span class="s2">"Mrs."</span><span class="p">,</span>
+    <span class="s2">"Ms."</span><span class="p">,</span>
+    <span class="s2">"Miss"</span><span class="p">,</span>
+    <span class="s2">"Dr."</span><span class="p">,</span>
+    <span class="s2">"Professor"</span><span class="p">,</span>
 <span class="p">]</span>
 </code></pre></div>
 <p>Second, let's create a <code>PatternRecognizer</code> which would scan for those titles, by passing a <code>deny_list</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="n">titles_recognizer</span> <span class="o">=</span> <span class="n">PatternRecognizer</span><span class="p">(</span><span class="n">supported_entity</span><span class="o">=</span><span class="s2">&quot;TITLE&quot;</span><span class="p">,</span> <span class="n">deny_list</span><span class="o">=</span><span class="n">titles_list</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">titles_recognizer</span> <span class="o">=</span> <span class="n">PatternRecognizer</span><span class="p">(</span><span class="n">supported_entity</span><span class="o">=</span><span class="s2">"TITLE"</span><span class="p">,</span> <span class="n">deny_list</span><span class="o">=</span><span class="n">titles_list</span><span class="p">)</span>
 </code></pre></div>
 <p>At this point we can call our recognizer directly:</p>
-<div class="highlight"><pre><span></span><code><span class="n">text1</span> <span class="o">=</span> <span class="s2">&quot;I suspect Professor Plum, in the Dining Room, with the candlestick&quot;</span>
-<span class="n">result</span> <span class="o">=</span> <span class="n">titles_recognizer</span><span class="o">.</span><span class="n">analyze</span><span class="p">(</span><span class="n">text1</span><span class="p">,</span> <span class="n">entities</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;TITLE&quot;</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Result:</span><span class="se">\n</span><span class="s2"> </span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">text1</span> <span class="o">=</span> <span class="s2">"I suspect Professor Plum, in the Dining Room, with the candlestick"</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">titles_recognizer</span><span class="o">.</span><span class="n">analyze</span><span class="p">(</span><span class="n">text1</span><span class="p">,</span> <span class="n">entities</span><span class="o">=</span><span class="p">[</span><span class="s2">"TITLE"</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Result:</span><span class="se">\n</span><span class="s2"> </span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>Result:
  [type: TITLE, start: 10, end: 19, score: 1.0]
@@ -4882,7 +4955,7 @@ First, let's define the tokens we want to treat as PII. In this case it would be
 </code></pre></div>
 <p>When initializing the <code>AnalyzerEngine</code>, Presidio loads all available recognizers, including the <code>NlpEngine</code> used to detect entities, and extract tokens, lemmas and other linguistic features.</p>
 <p>Let's run the analyzer with the new recognizer in place:</p>
-<div class="highlight"><pre><span></span><code><span class="n">results</span> <span class="o">=</span> <span class="n">analyzer</span><span class="o">.</span><span class="n">analyze</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">text1</span><span class="p">,</span> <span class="n">language</span><span class="o">=</span><span class="s2">&quot;en&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">results</span> <span class="o">=</span> <span class="n">analyzer</span><span class="o">.</span><span class="n">analyze</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">text1</span><span class="p">,</span> <span class="n">language</span><span class="o">=</span><span class="s2">"en"</span><span class="p">)</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="n">print_analyzer_results</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="n">text1</span><span class="p">)</span>
 </code></pre></div>
@@ -4894,9 +4967,9 @@ Result 2:
  type: LOCATION, start: 29, end: 44, score: 0.85, text: the Dining Room
 </code></pre></div>
 <p>As expected, both the name "Plum" and the title were identified as PII:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Identified these PII entities:&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">"Identified these PII entities:"</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;- </span><span class="si">{</span><span class="n">text1</span><span class="p">[</span><span class="n">result</span><span class="o">.</span><span class="n">start</span><span class="p">:</span><span class="n">result</span><span class="o">.</span><span class="n">end</span><span class="p">]</span><span class="si">}</span><span class="s2"> as </span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">entity_type</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"- </span><span class="si">{</span><span class="n">text1</span><span class="p">[</span><span class="n">result</span><span class="o">.</span><span class="n">start</span><span class="p">:</span><span class="n">result</span><span class="o">.</span><span class="n">end</span><span class="p">]</span><span class="si">}</span><span class="s2"> as </span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">entity_type</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>Identified these PII entities:
 - Professor as TITLE
@@ -4907,18 +4980,18 @@ Result 2:
 <p>Another simple recognizer we can add is based on regular expressions. 
 Let's assume we want to be extremely conservative and treat any token which contains a number as PII.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Define the regex pattern in a Presidio `Pattern` object:</span>
-<span class="n">numbers_pattern</span> <span class="o">=</span> <span class="n">Pattern</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;numbers_pattern&quot;</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="s2">&quot;\d+&quot;</span><span class="p">,</span> <span class="n">score</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">numbers_pattern</span> <span class="o">=</span> <span class="n">Pattern</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">"numbers_pattern"</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="s2">"\d+"</span><span class="p">,</span> <span class="n">score</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
 
 <span class="c1"># Define the recognizer with one or more patterns</span>
 <span class="n">number_recognizer</span> <span class="o">=</span> <span class="n">PatternRecognizer</span><span class="p">(</span>
-    <span class="n">supported_entity</span><span class="o">=</span><span class="s2">&quot;NUMBER&quot;</span><span class="p">,</span> <span class="n">patterns</span><span class="o">=</span><span class="p">[</span><span class="n">numbers_pattern</span><span class="p">]</span>
+    <span class="n">supported_entity</span><span class="o">=</span><span class="s2">"NUMBER"</span><span class="p">,</span> <span class="n">patterns</span><span class="o">=</span><span class="p">[</span><span class="n">numbers_pattern</span><span class="p">]</span>
 <span class="p">)</span>
 </code></pre></div>
 <p>Testing the recognizer itself:</p>
-<div class="highlight"><pre><span></span><code><span class="n">text2</span> <span class="o">=</span> <span class="s2">&quot;I live in 510 Broad st.&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="n">text2</span> <span class="o">=</span> <span class="s2">"I live in 510 Broad st."</span>
 
-<span class="n">numbers_result</span> <span class="o">=</span> <span class="n">number_recognizer</span><span class="o">.</span><span class="n">analyze</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">text2</span><span class="p">,</span> <span class="n">entities</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;NUMBER&quot;</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Result:&quot;</span><span class="p">)</span>
+<span class="n">numbers_result</span> <span class="o">=</span> <span class="n">number_recognizer</span><span class="o">.</span><span class="n">analyze</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">text2</span><span class="p">,</span> <span class="n">entities</span><span class="o">=</span><span class="p">[</span><span class="s2">"NUMBER"</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Result:"</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">numbers_result</span><span class="p">)</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>Result:
@@ -4940,15 +5013,15 @@ Let's assume we want to be extremely conservative and treat any token which cont
 <div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">MyRecognizer</span><span class="p">(</span><span class="n">EntityRecognizer</span><span class="p">):</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">load</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;No loading is required.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""No loading is required."""</span>
         <span class="k">pass</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">analyze</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">entities</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">nlp_artifacts</span><span class="p">:</span> <span class="n">NlpArtifacts</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">RecognizerResult</span><span class="p">]:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Logic for detecting a specific PII</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
         <span class="k">pass</span>
 </code></pre></div>
 <p>For example, detecting numbers in either numerical or alphabetic (e.g. Forty five) form:</p>
@@ -4957,22 +5030,22 @@ Let's assume we want to be extremely conservative and treat any token which cont
     <span class="n">expected_confidence_level</span> <span class="o">=</span> <span class="mf">0.7</span>  <span class="c1"># expected confidence level for this recognizer</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">load</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;No loading is required.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""No loading is required."""</span>
         <span class="k">pass</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">analyze</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">entities</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">nlp_artifacts</span><span class="p">:</span> <span class="n">NlpArtifacts</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">RecognizerResult</span><span class="p">]:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Analyzes test to find tokens which represent numbers (either 123 or One Two Three).</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
         <span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
 
         <span class="c1"># iterate over the spaCy tokens, and call `token.like_num`</span>
         <span class="k">for</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">nlp_artifacts</span><span class="o">.</span><span class="n">tokens</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">token</span><span class="o">.</span><span class="n">like_num</span><span class="p">:</span>
                 <span class="n">result</span> <span class="o">=</span> <span class="n">RecognizerResult</span><span class="p">(</span>
-                    <span class="n">entity_type</span><span class="o">=</span><span class="s2">&quot;NUMBER&quot;</span><span class="p">,</span>
+                    <span class="n">entity_type</span><span class="o">=</span><span class="s2">"NUMBER"</span><span class="p">,</span>
                     <span class="n">start</span><span class="o">=</span><span class="n">token</span><span class="o">.</span><span class="n">idx</span><span class="p">,</span>
                     <span class="n">end</span><span class="o">=</span><span class="n">token</span><span class="o">.</span><span class="n">idx</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">token</span><span class="p">),</span>
                     <span class="n">score</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">expected_confidence_level</span><span class="p">,</span>
@@ -4980,14 +5053,14 @@ Let's assume we want to be extremely conservative and treat any token which cont
                 <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">results</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="n">new_numbers_recognizer</span> <span class="o">=</span> <span class="n">NumbersRecognizer</span><span class="p">(</span><span class="n">supported_entities</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;NUMBER&quot;</span><span class="p">])</span>
+<div class="highlight"><pre><span></span><code><span class="n">new_numbers_recognizer</span> <span class="o">=</span> <span class="n">NumbersRecognizer</span><span class="p">(</span><span class="n">supported_entities</span><span class="o">=</span><span class="p">[</span><span class="s2">"NUMBER"</span><span class="p">])</span>
 </code></pre></div>
 <p>Since this recognizer requires the <code>NlpArtifacts</code>, we would have to call it as part of the <code>AnalyzerEngine</code> flow:</p>
-<div class="highlight"><pre><span></span><code><span class="n">text3</span> <span class="o">=</span> <span class="s2">&quot;Roberto lives in Five 10 Broad st.&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="n">text3</span> <span class="o">=</span> <span class="s2">"Roberto lives in Five 10 Broad st."</span>
 <span class="n">analyzer</span> <span class="o">=</span> <span class="n">AnalyzerEngine</span><span class="p">()</span>
 <span class="n">analyzer</span><span class="o">.</span><span class="n">registry</span><span class="o">.</span><span class="n">add_recognizer</span><span class="p">(</span><span class="n">new_numbers_recognizer</span><span class="p">)</span>
 
-<span class="n">numbers_results2</span> <span class="o">=</span> <span class="n">analyzer</span><span class="o">.</span><span class="n">analyze</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">text3</span><span class="p">,</span> <span class="n">language</span><span class="o">=</span><span class="s2">&quot;en&quot;</span><span class="p">)</span>
+<span class="n">numbers_results2</span> <span class="o">=</span> <span class="n">analyzer</span><span class="o">.</span><span class="n">analyze</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">text3</span><span class="p">,</span> <span class="n">language</span><span class="o">=</span><span class="s2">"en"</span><span class="p">)</span>
 <span class="n">print_analyzer_results</span><span class="p">(</span><span class="n">numbers_results2</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="n">text3</span><span class="p">)</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>Result 0:
@@ -5014,14 +5087,14 @@ For a detailed example, see <a href="https://data-privacy-stack.github.io/presid
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">presidio_analyzer.nlp_engine</span><span class="w"> </span><span class="kn">import</span> <span class="n">NlpEngineProvider</span>
 
 <span class="c1"># import spacy</span>
-<span class="c1"># spacy.cli.download(&quot;es_core_news_md&quot;)</span>
+<span class="c1"># spacy.cli.download("es_core_news_md")</span>
 
 <span class="c1"># Create configuration containing engine name and models</span>
 <span class="n">configuration</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;nlp_engine_name&quot;</span><span class="p">:</span> <span class="s2">&quot;spacy&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;models&quot;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="p">{</span><span class="s2">&quot;lang_code&quot;</span><span class="p">:</span> <span class="s2">&quot;es&quot;</span><span class="p">,</span> <span class="s2">&quot;model_name&quot;</span><span class="p">:</span> <span class="s2">&quot;es_core_news_md&quot;</span><span class="p">},</span>
-        <span class="p">{</span><span class="s2">&quot;lang_code&quot;</span><span class="p">:</span> <span class="s2">&quot;en&quot;</span><span class="p">,</span> <span class="s2">&quot;model_name&quot;</span><span class="p">:</span> <span class="s2">&quot;en_core_web_lg&quot;</span><span class="p">},</span>
+    <span class="s2">"nlp_engine_name"</span><span class="p">:</span> <span class="s2">"spacy"</span><span class="p">,</span>
+    <span class="s2">"models"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span><span class="s2">"lang_code"</span><span class="p">:</span> <span class="s2">"es"</span><span class="p">,</span> <span class="s2">"model_name"</span><span class="p">:</span> <span class="s2">"es_core_news_md"</span><span class="p">},</span>
+        <span class="p">{</span><span class="s2">"lang_code"</span><span class="p">:</span> <span class="s2">"en"</span><span class="p">,</span> <span class="s2">"model_name"</span><span class="p">:</span> <span class="s2">"en_core_web_lg"</span><span class="p">},</span>
     <span class="p">],</span>
 <span class="p">}</span>
 
@@ -5031,16 +5104,16 @@ For a detailed example, see <a href="https://data-privacy-stack.github.io/presid
 
 <span class="c1"># Pass the created NLP engine and supported_languages to the AnalyzerEngine</span>
 <span class="n">analyzer</span> <span class="o">=</span> <span class="n">AnalyzerEngine</span><span class="p">(</span>
-    <span class="n">nlp_engine</span><span class="o">=</span><span class="n">nlp_engine_with_spanish</span><span class="p">,</span> <span class="n">supported_languages</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;en&quot;</span><span class="p">,</span> <span class="s2">&quot;es&quot;</span><span class="p">]</span>
+    <span class="n">nlp_engine</span><span class="o">=</span><span class="n">nlp_engine_with_spanish</span><span class="p">,</span> <span class="n">supported_languages</span><span class="o">=</span><span class="p">[</span><span class="s2">"en"</span><span class="p">,</span> <span class="s2">"es"</span><span class="p">]</span>
 <span class="p">)</span>
 
 <span class="c1"># Analyze in different languages</span>
-<span class="n">results_spanish</span> <span class="o">=</span> <span class="n">analyzer</span><span class="o">.</span><span class="n">analyze</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;Mi nombre es Morris&quot;</span><span class="p">,</span> <span class="n">language</span><span class="o">=</span><span class="s2">&quot;es&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Results from Spanish request:&quot;</span><span class="p">)</span>
+<span class="n">results_spanish</span> <span class="o">=</span> <span class="n">analyzer</span><span class="o">.</span><span class="n">analyze</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">"Mi nombre es Morris"</span><span class="p">,</span> <span class="n">language</span><span class="o">=</span><span class="s2">"es"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Results from Spanish request:"</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">results_spanish</span><span class="p">)</span>
 
-<span class="n">results_english</span> <span class="o">=</span> <span class="n">analyzer</span><span class="o">.</span><span class="n">analyze</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;My name is Morris&quot;</span><span class="p">,</span> <span class="n">language</span><span class="o">=</span><span class="s2">&quot;en&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Results from English request:&quot;</span><span class="p">)</span>
+<span class="n">results_english</span> <span class="o">=</span> <span class="n">analyzer</span><span class="o">.</span><span class="n">analyze</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">"My name is Morris"</span><span class="p">,</span> <span class="n">language</span><span class="o">=</span><span class="s2">"en"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Results from English request:"</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">results_english</span><span class="p">)</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>Results from Spanish request:
@@ -5056,12 +5129,12 @@ Results from English request:
 <p>Presidio has a internal mechanism for leveraging context words. This mechanism would increse the detection confidence of a PII entity in case a specific word appears before or after it.</p>
 <p>In this example we would first implement a zip code recognizer without context, and then add context to see how the confidence changes. Zip regex patterns (essentially 5 digits) are very week, so we would want the initial confidence to be low, and increased with the existence of context words.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Define the regex pattern</span>
-<span class="n">regex</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;(\b\d</span><span class="si">{5}</span><span class="s2">(?:\-\d</span><span class="si">{4}</span><span class="s2">)?\b)&quot;</span>  <span class="c1"># very weak regex pattern</span>
-<span class="n">zipcode_pattern</span> <span class="o">=</span> <span class="n">Pattern</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;zip code (weak)&quot;</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="n">regex</span><span class="p">,</span> <span class="n">score</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
+<span class="n">regex</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">"(\b\d</span><span class="si">{5}</span><span class="s2">(?:\-\d</span><span class="si">{4}</span><span class="s2">)?\b)"</span>  <span class="c1"># very weak regex pattern</span>
+<span class="n">zipcode_pattern</span> <span class="o">=</span> <span class="n">Pattern</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">"zip code (weak)"</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="n">regex</span><span class="p">,</span> <span class="n">score</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
 
 <span class="c1"># Define the recognizer with the defined pattern</span>
 <span class="n">zipcode_recognizer</span> <span class="o">=</span> <span class="n">PatternRecognizer</span><span class="p">(</span>
-    <span class="n">supported_entity</span><span class="o">=</span><span class="s2">&quot;US_ZIP_CODE&quot;</span><span class="p">,</span> <span class="n">patterns</span><span class="o">=</span><span class="p">[</span><span class="n">zipcode_pattern</span><span class="p">]</span>
+    <span class="n">supported_entity</span><span class="o">=</span><span class="s2">"US_ZIP_CODE"</span><span class="p">,</span> <span class="n">patterns</span><span class="o">=</span><span class="p">[</span><span class="n">zipcode_pattern</span><span class="p">]</span>
 <span class="p">)</span>
 
 <span class="n">registry</span> <span class="o">=</span> <span class="n">RecognizerRegistry</span><span class="p">()</span>
@@ -5069,8 +5142,8 @@ Results from English request:
 <span class="n">analyzer</span> <span class="o">=</span> <span class="n">AnalyzerEngine</span><span class="p">(</span><span class="n">registry</span><span class="o">=</span><span class="n">registry</span><span class="p">)</span>
 
 <span class="c1"># Test</span>
-<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;My zip code is 90210&quot;</span>
-<span class="n">results</span> <span class="o">=</span> <span class="n">analyzer</span><span class="o">.</span><span class="n">analyze</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">text</span><span class="p">,</span> <span class="n">language</span><span class="o">=</span><span class="s2">&quot;en&quot;</span><span class="p">)</span>
+<span class="n">text</span> <span class="o">=</span> <span class="s2">"My zip code is 90210"</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">analyzer</span><span class="o">.</span><span class="n">analyze</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">text</span><span class="p">,</span> <span class="n">language</span><span class="o">=</span><span class="s2">"en"</span><span class="p">)</span>
 <span class="n">print_analyzer_results</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="n">text</span><span class="p">)</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>Result 0:
@@ -5079,9 +5152,9 @@ Results from English request:
 <p>So this is working, but would catch any 5 digit string. This is why we set the score to 0.01. Let's use context words to increase score:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Define the recognizer with the defined pattern and context words</span>
 <span class="n">zipcode_recognizer</span> <span class="o">=</span> <span class="n">PatternRecognizer</span><span class="p">(</span>
-    <span class="n">supported_entity</span><span class="o">=</span><span class="s2">&quot;US_ZIP_CODE&quot;</span><span class="p">,</span>
+    <span class="n">supported_entity</span><span class="o">=</span><span class="s2">"US_ZIP_CODE"</span><span class="p">,</span>
     <span class="n">patterns</span><span class="o">=</span><span class="p">[</span><span class="n">zipcode_pattern</span><span class="p">],</span>
-    <span class="n">context</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;zip&quot;</span><span class="p">,</span> <span class="s2">&quot;zipcode&quot;</span><span class="p">],</span>
+    <span class="n">context</span><span class="o">=</span><span class="p">[</span><span class="s2">"zip"</span><span class="p">,</span> <span class="s2">"zipcode"</span><span class="p">],</span>
 <span class="p">)</span>
 </code></pre></div>
 <p>When creating an <code>AnalyzerEngine</code> we can provide our own context enhancement logic by passing it to <code>context_aware_enhancer</code> parameter.
@@ -5091,8 +5164,8 @@ Results from English request:
 <span class="n">analyzer</span> <span class="o">=</span> <span class="n">AnalyzerEngine</span><span class="p">(</span><span class="n">registry</span><span class="o">=</span><span class="n">registry</span><span class="p">)</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="c1"># Test</span>
-<span class="n">results</span> <span class="o">=</span> <span class="n">analyzer</span><span class="o">.</span><span class="n">analyze</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;My zip code is 90210&quot;</span><span class="p">,</span> <span class="n">language</span><span class="o">=</span><span class="s2">&quot;en&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Result:&quot;</span><span class="p">)</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">analyzer</span><span class="o">.</span><span class="n">analyze</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">"My zip code is 90210"</span><span class="p">,</span> <span class="n">language</span><span class="o">=</span><span class="s2">"en"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Result:"</span><span class="p">)</span>
 <span class="n">print_analyzer_results</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="n">text</span><span class="p">)</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>Result:
@@ -5110,8 +5183,8 @@ Result 0:
 <span class="p">)</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="c1"># Test</span>
-<span class="n">results</span> <span class="o">=</span> <span class="n">analyzer</span><span class="o">.</span><span class="n">analyze</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;My zip code is 90210&quot;</span><span class="p">,</span> <span class="n">language</span><span class="o">=</span><span class="s2">&quot;en&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Result:&quot;</span><span class="p">)</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">analyzer</span><span class="o">.</span><span class="n">analyze</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">"My zip code is 90210"</span><span class="p">,</span> <span class="n">language</span><span class="o">=</span><span class="s2">"en"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Result:"</span><span class="p">)</span>
 <span class="n">print_analyzer_results</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="n">text</span><span class="p">)</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>Result:
@@ -5122,9 +5195,9 @@ Result 0:
 <p>Presidio supports passing a list of outer context in analyzer level, this is useful if the text is coming from a specific column or a specific user input etc. notice how the "zip" context word doesn't appear in the text but still enhance the confidence score from 0.01 to 0.4:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Define the recognizer with the defined pattern and context words</span>
 <span class="n">zipcode_recognizer</span> <span class="o">=</span> <span class="n">PatternRecognizer</span><span class="p">(</span>
-    <span class="n">supported_entity</span><span class="o">=</span><span class="s2">&quot;US_ZIP_CODE&quot;</span><span class="p">,</span>
+    <span class="n">supported_entity</span><span class="o">=</span><span class="s2">"US_ZIP_CODE"</span><span class="p">,</span>
     <span class="n">patterns</span><span class="o">=</span><span class="p">[</span><span class="n">zipcode_pattern</span><span class="p">],</span>
-    <span class="n">context</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;zip&quot;</span><span class="p">,</span> <span class="s2">&quot;zipcode&quot;</span><span class="p">],</span>
+    <span class="n">context</span><span class="o">=</span><span class="p">[</span><span class="s2">"zip"</span><span class="p">,</span> <span class="s2">"zipcode"</span><span class="p">],</span>
 <span class="p">)</span>
 
 <span class="n">registry</span> <span class="o">=</span> <span class="n">RecognizerRegistry</span><span class="p">()</span>
@@ -5132,9 +5205,9 @@ Result 0:
 <span class="n">analyzer</span> <span class="o">=</span> <span class="n">AnalyzerEngine</span><span class="p">(</span><span class="n">registry</span><span class="o">=</span><span class="n">registry</span><span class="p">)</span>
 
 <span class="c1"># Test</span>
-<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;My code is 90210&quot;</span>
-<span class="n">result</span> <span class="o">=</span> <span class="n">analyzer</span><span class="o">.</span><span class="n">analyze</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">text</span><span class="p">,</span> <span class="n">language</span><span class="o">=</span><span class="s2">&quot;en&quot;</span><span class="p">,</span> <span class="n">context</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;zip&quot;</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Result:&quot;</span><span class="p">)</span>
+<span class="n">text</span> <span class="o">=</span> <span class="s2">"My code is 90210"</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">analyzer</span><span class="o">.</span><span class="n">analyze</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">text</span><span class="p">,</span> <span class="n">language</span><span class="o">=</span><span class="s2">"en"</span><span class="p">,</span> <span class="n">context</span><span class="o">=</span><span class="p">[</span><span class="s2">"zip"</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Result:"</span><span class="p">)</span>
 <span class="n">print_analyzer_results</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="n">text</span><span class="p">)</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>Result:
@@ -5154,46 +5227,46 @@ And more.</li>
 <p>For more information, refer to the <a href="https://data-privacy-stack.github.io/presidio/analyzer/decision_process/">decision process documentation</a>.</p>
 <p>Let's use the decision process output to understand how the zip code value was detected:</p>
 <div class="highlight"><pre><span></span><code><span class="n">results</span> <span class="o">=</span> <span class="n">analyzer</span><span class="o">.</span><span class="n">analyze</span><span class="p">(</span>
-    <span class="n">text</span><span class="o">=</span><span class="s2">&quot;My zip code is 90210&quot;</span><span class="p">,</span> <span class="n">language</span><span class="o">=</span><span class="s2">&quot;en&quot;</span><span class="p">,</span> <span class="n">return_decision_process</span><span class="o">=</span><span class="kc">True</span>
+    <span class="n">text</span><span class="o">=</span><span class="s2">"My zip code is 90210"</span><span class="p">,</span> <span class="n">language</span><span class="o">=</span><span class="s2">"en"</span><span class="p">,</span> <span class="n">return_decision_process</span><span class="o">=</span><span class="kc">True</span>
 <span class="p">)</span>
 <span class="n">decision_process</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">analysis_explanation</span>
 
 <span class="n">pp</span> <span class="o">=</span> <span class="n">pprint</span><span class="o">.</span><span class="n">PrettyPrinter</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Decision process output:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Decision process output:</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
 <span class="n">pp</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">decision_process</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">)</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>Decision process output:
 
-{&#39;original_score&#39;: 0.01,
- &#39;pattern&#39;: &#39;(\\b\\d{5}(?:\\-\\d{4})?\\b)&#39;,
- &#39;pattern_name&#39;: &#39;zip code (weak)&#39;,
- &#39;recognizer&#39;: &#39;PatternRecognizer&#39;,
- &#39;regex_flags&#39;: regex.I|regex.M|regex.S,
- &#39;score&#39;: 0.4,
- &#39;score_context_improvement&#39;: 0.39,
- &#39;supportive_context_word&#39;: &#39;zip&#39;,
- &#39;textual_explanation&#39;: &#39;Detected by `PatternRecognizer` using pattern `zip &#39;
-                        &#39;code (weak)`&#39;,
- &#39;validation_result&#39;: None}
+{'original_score': 0.01,
+ 'pattern': '(\\b\\d{5}(?:\\-\\d{4})?\\b)',
+ 'pattern_name': 'zip code (weak)',
+ 'recognizer': 'PatternRecognizer',
+ 'regex_flags': regex.I|regex.M|regex.S,
+ 'score': 0.4,
+ 'score_context_improvement': 0.39,
+ 'supportive_context_word': 'zip',
+ 'textual_explanation': 'Detected by `PatternRecognizer` using pattern `zip '
+                        'code (weak)`',
+ 'validation_result': None}
 </code></pre></div>
 <p>When developing new recognizers, one can add information to this explanation and extend it with additional findings.</p>
 <h3 id="example-8-passing-a-list-of-words-to-keep">Example 8: passing a list of words to keep</h3>
 <p>We will use the built in recognizers that include the <code>URLRecognizer</code> and the NLP model <code>EntityRecognizer</code> and see the default functionality if we don't specify any list of words for the detector to allow to keep in the text.</p>
-<div class="highlight"><pre><span></span><code><span class="n">websites_list</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;bing.com&quot;</span><span class="p">,</span> <span class="s2">&quot;microsoft.com&quot;</span><span class="p">]</span>
-<span class="n">text1</span> <span class="o">=</span> <span class="s2">&quot;Bill&#39;s favorite website is bing.com, David&#39;s is microsoft.com&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="n">websites_list</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"bing.com"</span><span class="p">,</span> <span class="s2">"microsoft.com"</span><span class="p">]</span>
+<span class="n">text1</span> <span class="o">=</span> <span class="s2">"Bill's favorite website is bing.com, David's is microsoft.com"</span>
 <span class="n">analyzer</span> <span class="o">=</span> <span class="n">AnalyzerEngine</span><span class="p">()</span>
-<span class="n">results</span> <span class="o">=</span> <span class="n">analyzer</span><span class="o">.</span><span class="n">analyze</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">text1</span><span class="p">,</span> <span class="n">language</span><span class="o">=</span><span class="s2">&quot;en&quot;</span><span class="p">,</span> <span class="n">return_decision_process</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">analyzer</span><span class="o">.</span><span class="n">analyze</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">text1</span><span class="p">,</span> <span class="n">language</span><span class="o">=</span><span class="s2">"en"</span><span class="p">,</span> <span class="n">return_decision_process</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">print_analyzer_results</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="n">text1</span><span class="p">)</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>Result 0:
  type: PERSON, start: 0, end: 4, score: 0.85, text: Bill
- Identified as PERSON by Spacy&#39;s Named Entity Recognition
+ Identified as PERSON by Spacy's Named Entity Recognition
 Result 1:
  type: URL, start: 27, end: 35, score: 0.85, text: bing.com
  Detected by `UrlRecognizer` using pattern `Non schema URL`
 Result 2:
  type: PERSON, start: 37, end: 42, score: 0.85, text: David
- Identified as PERSON by Spacy&#39;s Named Entity Recognition
+ Identified as PERSON by Spacy's Named Entity Recognition
 Result 3:
  type: URL, start: 48, end: 61, score: 0.85, text: microsoft.com
  Detected by `UrlRecognizer` using pattern `Non schema URL`
@@ -5201,18 +5274,18 @@ Result 3:
 <p>To specify an allow list we just pass a list of values we want to keep as a parameter to call to <code>analyze</code>. Now we can see that in the results, <code>bing.com</code> is no longer being recognized as a PII item, only <code>microsoft.com</code> as well as the named entities are still recognized since we did include it in the allow list. </p>
 <div class="highlight"><pre><span></span><code><span class="n">results</span> <span class="o">=</span> <span class="n">analyzer</span><span class="o">.</span><span class="n">analyze</span><span class="p">(</span>
     <span class="n">text</span><span class="o">=</span><span class="n">text1</span><span class="p">,</span>
-    <span class="n">language</span><span class="o">=</span><span class="s2">&quot;en&quot;</span><span class="p">,</span>
-    <span class="n">allow_list</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;bing.com&quot;</span><span class="p">,</span> <span class="s2">&quot;google.com&quot;</span><span class="p">],</span>
+    <span class="n">language</span><span class="o">=</span><span class="s2">"en"</span><span class="p">,</span>
+    <span class="n">allow_list</span><span class="o">=</span><span class="p">[</span><span class="s2">"bing.com"</span><span class="p">,</span> <span class="s2">"google.com"</span><span class="p">],</span>
     <span class="n">return_decision_process</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="n">print_analyzer_results</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="n">text1</span><span class="p">)</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>Result 0:
  type: PERSON, start: 0, end: 4, score: 0.85, text: Bill
- Identified as PERSON by Spacy&#39;s Named Entity Recognition
+ Identified as PERSON by Spacy's Named Entity Recognition
 Result 1:
  type: PERSON, start: 37, end: 42, score: 0.85, text: David
- Identified as PERSON by Spacy&#39;s Named Entity Recognition
+ Identified as PERSON by Spacy's Named Entity Recognition
 Result 2:
  type: URL, start: 48, end: 61, score: 0.85, text: microsoft.com
  Detected by `UrlRecognizer` using pattern `Non schema URL`
@@ -5321,7 +5394,7 @@ Result 2:
       
     
     <a href="https://github.com/data-privacy-stack/presidio" target="_blank" rel="noopener" title="github.com" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M216.5 362.5c-66-8-112.5-55.5-112.5-117 0-25 9-52 24-70-6.5-16.5-5.5-51.5 2-66 20-2.5 47 8 63 22.5 19-6 39-9 63.5-9s44.5 3 62.5 8.5c15.5-14 43-24.5 63-22 7 13.5 8 48.5 1.5 65.5 16 19 24.5 44.5 24.5 70.5 0 61.5-46.5 108-113.5 116.5 17 11 28.5 35 28.5 62.5v52c0 15 12.5 23.5 27.5 17.5C441 459.5 512 369 512 257 512 115.5 397 0 255.5 0S0 115.5 0 257c0 111 70.5 203 165.5 237.5 13.5 5 26.5-4 26.5-17.5v-40c-7 3-16 5-24 5-33 0-52.5-18-66.5-51.5-5.5-13.5-11.5-21.5-23-23-6-.5-8-3-8-6 0-6 10-10.5 20-10.5 14.5 0 27 9 40 27.5 10 14.5 20.5 21 33 21s20.5-4.5 32-16c8.5-8.5 15-16 21-21"/></svg>
     </a>
   
     
@@ -5332,7 +5405,7 @@ Result 2:
       
     
     <a href="https://discord.gg/MewtBGFquB" target="_blank" rel="noopener" title="discord.gg" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M492.5 69.8c-.2-.3-.4-.6-.8-.7-38.1-17.5-78.4-30-119.7-37.1-.4-.1-.8 0-1.1.1s-.6.4-.8.8c-5.5 9.9-10.5 20.2-14.9 30.6-44.6-6.8-89.9-6.8-134.4 0-4.5-10.5-9.5-20.7-15.1-30.6-.2-.3-.5-.6-.8-.8s-.7-.2-1.1-.2C162.5 39 122.2 51.5 84.1 69c-.3.1-.6.4-.8.7C7.1 183.5-13.8 294.6-3.6 404.2c0 .3.1.5.2.8s.3.4.5.6c44.4 32.9 94 58 146.8 74.2.4.1.8.1 1.1 0s.7-.4.9-.7c11.3-15.4 21.4-31.8 30-48.8.1-.2.2-.5.2-.8s0-.5-.1-.8-.2-.5-.4-.6-.4-.3-.7-.4c-15.8-6.1-31.2-13.4-45.9-21.9-.3-.2-.5-.4-.7-.6s-.3-.6-.3-.9 0-.6.2-.9.3-.5.6-.7c3.1-2.3 6.2-4.7 9.1-7.1.3-.2.6-.4.9-.4s.7 0 1 .1c96.2 43.9 200.4 43.9 295.5 0 .3-.1.7-.2 1-.2s.7.2.9.4c2.9 2.4 6 4.9 9.1 7.2.2.2.4.4.6.7s.2.6.2.9-.1.6-.3.9-.4.5-.6.6c-14.7 8.6-30 15.9-45.9 21.8-.2.1-.5.2-.7.4s-.3.4-.4.7-.1.5-.1.8.1.5.2.8c8.8 17 18.8 33.3 30 48.8.2.3.6.6.9.7s.8.1 1.1 0c52.9-16.2 102.6-41.3 147.1-74.2.2-.2.4-.4.5-.6s.2-.5.2-.8c12.3-126.8-20.5-236.9-86.9-334.5zm-302 267.7c-29 0-52.8-26.6-52.8-59.2s23.4-59.2 52.8-59.2c29.7 0 53.3 26.8 52.8 59.2 0 32.7-23.4 59.2-52.8 59.2m195.4 0c-29 0-52.8-26.6-52.8-59.2s23.4-59.2 52.8-59.2c29.7 0 53.3 26.8 52.8 59.2 0 32.7-23.2 59.2-52.8 59.2"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M492.5 69.8c-.2-.3-.4-.6-.8-.7-38.1-17.5-78.4-30-119.7-37.1-.4-.1-.8 0-1.1.1s-.6.4-.8.8c-5.5 9.9-10.5 20.2-14.9 30.6-44.6-6.8-89.9-6.8-134.4 0-4.5-10.5-9.5-20.7-15.1-30.6-.2-.3-.5-.6-.8-.8s-.7-.2-1.1-.2C162.5 39 122.2 51.5 84.1 69c-.3.1-.6.4-.8.7C7.1 183.5-13.8 294.6-3.6 404.2c0 .3.1.5.2.8s.3.4.5.6c44.4 32.9 94 58 146.8 74.2.4.1.8.1 1.1 0s.7-.4.9-.7c11.3-15.4 21.4-31.8 30-48.8.1-.2.2-.5.2-.8s0-.5-.1-.8-.2-.5-.4-.6-.4-.3-.7-.4c-15.8-6.1-31.2-13.4-45.9-21.9-.3-.2-.5-.4-.7-.6s-.3-.6-.3-.9 0-.6.2-.9.3-.5.6-.7c3.1-2.3 6.2-4.7 9.1-7.1.3-.2.6-.4.9-.4s.7 0 1 .1c96.2 43.9 200.4 43.9 295.5 0 .3-.1.7-.2 1-.2s.7.2.9.4c2.9 2.4 6 4.9 9.1 7.2.2.2.4.4.6.7s.2.6.2.9-.1.6-.3.9-.4.5-.6.6c-14.7 8.6-30 15.9-45.9 21.8-.2.1-.5.2-.7.4s-.3.4-.4.7-.1.5-.1.8.1.5.2.8c8.8 17 18.8 33.3 30 48.8.2.3.6.6.9.7s.8.1 1.1 0c52.9-16.2 102.6-41.3 147.1-74.2.2-.2.4-.4.5-.6s.2-.5.2-.8c12.3-126.8-20.5-236.9-86.9-334.5zm-302 267.7c-29 0-52.8-26.6-52.8-59.2s23.4-59.2 52.8-59.2c29.7 0 53.3 26.8 52.8 59.2 0 32.7-23.4 59.2-52.8 59.2m195.4 0c-29 0-52.8-26.6-52.8-59.2s23.4-59.2 52.8-59.2c29.7 0 53.3 26.8 52.8 59.2 0 32.7-23.2 59.2-52.8 59.2"/></svg>
     </a>
   
     
@@ -5343,7 +5416,7 @@ Result 2:
       
     
     <a href="https://github.com/orgs/data-privacy-stack/packages" target="_blank" rel="noopener" title="github.com" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M349.9 236.3h-66.1v-59.4h66.1zm0-204.3h-66.1v60.7h66.1zm78.2 144.8H362v59.4h66.1zm-156.3-72.1h-66.1v60.1h66.1zm78.1 0h-66.1v60.1h66.1zm276.8 100c-14.4-9.7-47.6-13.2-73.1-8.4-3.3-24-16.7-44.9-41.1-63.7l-14-9.3-9.3 14c-18.4 27.8-23.4 73.6-3.7 103.8-8.7 4.7-25.8 11.1-48.4 10.7H2.4c-8.7 50.8 5.8 116.8 44 162.1 37.1 43.9 92.7 66.2 165.4 66.2 157.4 0 273.9-72.5 328.4-204.2 21.4.4 67.6.1 91.3-45.2 1.5-2.5 6.6-13.2 8.5-17.1zm-511.1-27.9h-66v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1zm78.1 0h-66.1v59.4h66.1zm-78.1-72.1h-66.1v60.1h66.1z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M349.9 236.3h-66.1v-59.4h66.1zm0-204.3h-66.1v60.7h66.1zm78.2 144.8H362v59.4h66.1zm-156.3-72.1h-66.1v60.1h66.1zm78.1 0h-66.1v60.1h66.1zm276.8 100c-14.4-9.7-47.6-13.2-73.1-8.4-3.3-24-16.7-44.9-41.1-63.7l-14-9.3-9.3 14c-18.4 27.8-23.4 73.6-3.7 103.8-8.7 4.7-25.8 11.1-48.4 10.7H2.4c-8.7 50.8 5.8 116.8 44 162.1 37.1 43.9 92.7 66.2 165.4 66.2 157.4 0 273.9-72.5 328.4-204.2 21.4.4 67.6.1 91.3-45.2 1.5-2.5 6.6-13.2 8.5-17.1zm-511.1-27.9h-66v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1zm78.1 0h-66.1v59.4h66.1zm-78.1-72.1h-66.1v60.1h66.1z"/></svg>
     </a>
   
     
@@ -5351,7 +5424,7 @@ Result 2:
     
     
     <a href="mailto:presidio@dataprivacystack.org" target="_blank" rel="noopener" title="" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4l208 156a48 48 0 0 0 57.6 0l208-156c12.1-9.1 19.2-23.3 19.2-38.4 0-26.5-21.5-48-48-48zM0 196v188c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64V196L313.6 344.8c-34.1 25.6-81.1 25.6-115.2 0z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4l208 156a48 48 0 0 0 57.6 0l208-156c12.1-9.1 19.2-23.3 19.2-38.4 0-26.5-21.5-48-48-48zM0 196v188c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64V196L313.6 344.8c-34.1 25.6-81.1 25.6-115.2 0z"/></svg>
     </a>
   
     
@@ -5362,7 +5435,7 @@ Result 2:
       
     
     <a href="https://huggingface.co/spaces/presidio/presidio_demo" target="_blank" rel="noopener" title="huggingface.co" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M493.7.9 299.5 75.6l2.3-29.3c1-12.8-12.8-21.5-24-15.1L101.3 133.4C38.6 169.7 0 236.6 0 309c0 112.1 90.9 203 203 203 72.4 0 139.3-38.6 175.6-101.3l102.2-176.4c6.5-11.1-2.2-25-15.1-24l-29.3 2.3 74.7-194.2c.6-1.5.9-3.2.9-4.8 0-7.5-6-13.5-13.5-13.5q-2.55 0-4.8.9zM192 192a128 128 0 1 1 0 256 128 128 0 1 1 0-256m0 96a32 32 0 1 0-64 0 32 32 0 1 0 64 0m16 96a16 16 0 1 0 0-32 16 16 0 1 0 0 32"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M493.7.9 299.5 75.6l2.3-29.3c1-12.8-12.8-21.5-24-15.1L101.3 133.4C38.6 169.7 0 236.6 0 309c0 112.1 90.9 203 203 203 72.4 0 139.3-38.6 175.6-101.3l102.2-176.4c6.5-11.1-2.2-25-15.1-24l-29.3 2.3 74.7-194.2c.6-1.5.9-3.2.9-4.8 0-7.5-6-13.5-13.5-13.5q-2.55 0-4.8.9zM192 192a128 128 0 1 1 0 256 128 128 0 1 1 0-256m0 96a32 32 0 1 0-64 0 32 32 0 1 0 64 0m16 96a16 16 0 1 0 0-32 16 16 0 1 0 0 32"/></svg>
     </a>
   
 </div>
@@ -5372,20 +5445,25 @@ Result 2:
 </footer>
       
     </div>
-    <div class="md-dialog" data-md-component="dialog">
+    <div class="md-dialog" data-md-component="dialog" role="status" aria-atomic="true">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+      
+<div class="md-progress" data-md-component="progress" role="progressbar" aria-label="Loading"></div>
     
     
     
       
       
-      <script id="__config" type="application/json">{"annotate":null,"base":"../../..","features":["navigation.instant","navigation.instant.progress","content.tabs.link","content.code.copy","content.code.annotate","navigation.tabs","navigation.tabs.sticky","navigation.top","navigation.footer","search.suggest","search.highlight","toc.follow"],"search":"../../../assets/javascripts/workers/search.b6b7e04f.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":null}</script>
+      
+      
+        
+        
+      <script id="__config" type="application/json">{"annotate":null,"base":"../../..","features":["navigation.instant","navigation.instant.progress","content.tabs.link","content.code.copy","content.code.annotate","navigation.tabs","navigation.tabs.sticky","navigation.top","navigation.footer","search.suggest","search.highlight","toc.follow"],"redirect":null,"search":"../../../assets/javascripts/workers/search.c47bb847.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","clipboard.error":"Could not copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.ee611ef6.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.10ee5ab6.min.js"></script>
       
     
   </body>

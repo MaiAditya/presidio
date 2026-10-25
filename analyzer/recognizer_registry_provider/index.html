@@ -15,6 +15,7 @@
         <link rel="canonical" href="https://data-privacy-stack.github.io/presidio/analyzer/recognizer_registry_provider/">
       
       
+      
         <link rel="prev" href="../developing_recognizers/">
       
       
@@ -25,23 +26,23 @@
       
       
       <link rel="icon" href="../../assets/dps-icon.svg">
-      <meta name="generator" content="zensical-0.0.46">
+      <meta name="generator" content="zensical-0.0.72">
     
     
       
-        <title>Customizing recognizer registry from file - Presidio</title>
+        <title>Recognizer registry from file - Presidio</title>
       
     
     
       
         
       
-      <link rel="stylesheet" href="../../assets/stylesheets/modern/main.19d3147f.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/modern/main.4ab2de0c.min.css">
       
         
           
         
-        <link rel="stylesheet" href="../../assets/stylesheets/modern/palette.dfe2e883.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/modern/palette.b60ce83d.min.css">
       
       
 
@@ -208,14 +209,11 @@
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
-    <label class="md-overlay" for="__drawer" aria-label="Navigation"></label>
+    <label class="md-overlay" for="__drawer" aria-hidden="true"></label>
     <div data-md-component="skip">
-      
-        
-        <a href="#customizing-recognizer-registry-from-file" class="md-skip">
-          Skip to content
-        </a>
-      
+      <a href="#__skip" class="md-skip">
+        Skip to content
+      </a>
     </div>
     <div data-md-component="announce">
       
@@ -233,9 +231,10 @@
   <img src="../../assets/dps-icon.svg" alt="Presidio">
 
     </a>
-    <label class="md-header__button md-icon" for="__drawer" aria-label="Navigation">
+    <label class="md-header__button md-icon" for="__drawer">
       
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-menu" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
+      <span class="md-visually-hidden">Navigation</span>
     </label>
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
@@ -247,7 +246,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Customizing recognizer registry from file
+              Recognizer registry from file
             
           </span>
         </div>
@@ -287,9 +286,10 @@
     
       
       
-        <label class="md-header__button md-icon" for="__search" aria-label="Search">
+        <label class="md-header__button md-icon" for="__search">
           
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-search" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+          <span class="md-visually-hidden">Search</span>
         </label>
         <div class="md-search" data-md-component="search" role="dialog" aria-label="Search">
   <button type="button" class="md-search__button">
@@ -303,7 +303,7 @@
         <a href="https://github.com/data-privacy-stack/presidio/" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M216.5 362.5c-66-8-112.5-55.5-112.5-117 0-25 9-52 24-70-6.5-16.5-5.5-51.5 2-66 20-2.5 47 8 63 22.5 19-6 39-9 63.5-9s44.5 3 62.5 8.5c15.5-14 43-24.5 63-22 7 13.5 8 48.5 1.5 65.5 16 19 24.5 44.5 24.5 70.5 0 61.5-46.5 108-113.5 116.5 17 11 28.5 35 28.5 62.5v52c0 15 12.5 23.5 27.5 17.5C441 459.5 512 369 512 257 512 115.5 397 0 255.5 0S0 115.5 0 257c0 111 70.5 203 165.5 237.5 13.5 5 26.5-4 26.5-17.5v-40c-7 3-16 5-24 5-33 0-52.5-18-66.5-51.5-5.5-13.5-11.5-21.5-23-23-6-.5-8-3-8-6 0-6 10-10.5 20-10.5 14.5 0 27 9 40 27.5 10 14.5 20.5 21 33 21s20.5-4.5 32-16c8.5-8.5 15-16 21-21"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -493,7 +493,7 @@
       <a href="https://github.com/data-privacy-stack/presidio/" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M216.5 362.5c-66-8-112.5-55.5-112.5-117 0-25 9-52 24-70-6.5-16.5-5.5-51.5 2-66 20-2.5 47 8 63 22.5 19-6 39-9 63.5-9s44.5 3 62.5 8.5c15.5-14 43-24.5 63-22 7 13.5 8 48.5 1.5 65.5 16 19 24.5 44.5 24.5 70.5 0 61.5-46.5 108-113.5 116.5 17 11 28.5 35 28.5 62.5v52c0 15 12.5 23.5 27.5 17.5C441 459.5 512 369 512 257 512 115.5 397 0 255.5 0S0 115.5 0 257c0 111 70.5 203 165.5 237.5 13.5 5 26.5-4 26.5-17.5v-40c-7 3-16 5-24 5-33 0-52.5-18-66.5-51.5-5.5-13.5-11.5-21.5-23-23-6-.5-8-3-8-6 0-6 10-10.5 20-10.5 14.5 0 27 9 40 27.5 10 14.5 20.5 21 33 21s20.5-4.5 32-16c8.5-8.5 15-16 21-21"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -541,18 +541,19 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_1">
-            <span class="md-nav__icon md-icon"></span>
-            
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_1">
+              <span class="md-nav__icon md-icon"></span>
+              
   
   Presidio
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
               
                 
+                  
   
   
   
@@ -576,10 +577,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -603,10 +604,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -630,10 +631,11 @@
     </li>
   
 
+                
               
-            
-          </ul>
-        </nav>
+            </ul>
+          </nav>
+        
       
     </li>
   
@@ -677,18 +679,19 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2">
-            <span class="md-nav__icon md-icon"></span>
-            
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_2">
+              <span class="md-nav__icon md-icon"></span>
+              
   
   Quick start
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
               
                 
+                  
   
   
   
@@ -712,10 +715,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -739,10 +742,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -766,10 +769,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -793,10 +796,11 @@
     </li>
   
 
+                
               
-            
-          </ul>
-        </nav>
+            </ul>
+          </nav>
+        
       
     </li>
   
@@ -845,18 +849,19 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_3">
-            <span class="md-nav__icon md-icon"></span>
-            
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+            <label class="md-nav__title" for="__nav_3">
+              <span class="md-nav__icon md-icon"></span>
+              
   
   Learn Presidio
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
               
                 
+                  
   
   
   
@@ -880,10 +885,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -907,10 +912,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -947,18 +952,19 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_3">
-            <span class="md-nav__icon md-icon"></span>
-            
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_3_3">
+              <span class="md-nav__icon md-icon"></span>
+              
   
   Tutorial
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
               
                 
+                  
   
   
   
@@ -982,10 +988,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -1009,10 +1015,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -1036,10 +1042,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -1063,10 +1069,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -1090,10 +1096,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -1117,10 +1123,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -1144,10 +1150,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -1171,10 +1177,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -1198,10 +1204,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -1225,10 +1231,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -1252,10 +1258,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -1279,10 +1285,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -1306,10 +1312,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -1333,10 +1339,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -1360,18 +1366,19 @@
     </li>
   
 
+                
               
-            
-          </ul>
-        </nav>
+            </ul>
+          </nav>
+        
       
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
     
@@ -1410,18 +1417,19 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_3_4">
-            <span class="md-nav__icon md-icon"></span>
-            
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="true">
+            <label class="md-nav__title" for="__nav_3_4">
+              <span class="md-nav__icon md-icon"></span>
+              
   
   Text de-identification
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
               
                 
+                  
   
   
   
@@ -1445,10 +1453,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
     
@@ -1487,18 +1495,19 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_4_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_3_4_2">
-            <span class="md-nav__icon md-icon"></span>
-            
+        
+          <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_4_2_label" aria-expanded="true">
+            <label class="md-nav__title" for="__nav_3_4_2">
+              <span class="md-nav__icon md-icon"></span>
+              
   
   Presidio Analyzer
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
               
                 
+                  
   
   
   
@@ -1522,10 +1531,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
     
@@ -1564,18 +1573,19 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_4_2_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_3_4_2_2">
-            <span class="md-nav__icon md-icon"></span>
-            
+        
+          <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_4_2_2_label" aria-expanded="true">
+            <label class="md-nav__title" for="__nav_3_4_2_2">
+              <span class="md-nav__icon md-icon"></span>
+              
   
   Developing PII recognizers
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
               
                 
+                  
   
   
   
@@ -1599,10 +1609,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -1626,10 +1636,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
     
@@ -1732,6 +1742,34 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#using-a-custom-registry-file-with-the-presidio-analyzer-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Using a custom registry file with the Presidio Analyzer server
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Using a custom registry file with the Presidio Analyzer server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-enabling-a-pattern-based-country-recognizer-for-en" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Example: enabling a pattern-based country recognizer for <code>en</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1739,18 +1777,19 @@
     </li>
   
 
+                
               
-            
-          </ul>
-        </nav>
+            </ul>
+          </nav>
+        
       
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -1774,10 +1813,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -1801,10 +1840,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -1841,18 +1880,19 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_4_2_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_4_2_5">
-            <span class="md-nav__icon md-icon"></span>
-            
+        
+          <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_4_2_5_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_3_4_2_5">
+              <span class="md-nav__icon md-icon"></span>
+              
   
   Customizing the NLP model
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
               
                 
+                  
   
   
   
@@ -1876,10 +1916,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -1903,10 +1943,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -1930,10 +1970,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -1957,18 +1997,19 @@
     </li>
   
 
+                
               
-            
-          </ul>
-        </nav>
+            </ul>
+          </nav>
+        
       
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -1992,10 +2033,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -2019,18 +2060,19 @@
     </li>
   
 
+                
               
-            
-          </ul>
-        </nav>
+            </ul>
+          </nav>
+        
       
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -2067,18 +2109,19 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_4_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_4_3">
-            <span class="md-nav__icon md-icon"></span>
-            
+        
+          <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_4_3_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_3_4_3">
+              <span class="md-nav__icon md-icon"></span>
+              
   
   Presidio Anonymizer
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
               
                 
+                  
   
   
   
@@ -2102,10 +2145,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -2129,26 +2172,28 @@
     </li>
   
 
+                
               
-            
-          </ul>
-        </nav>
+            </ul>
+          </nav>
+        
       
     </li>
   
 
+                
               
-            
-          </ul>
-        </nav>
+            </ul>
+          </nav>
+        
       
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -2172,10 +2217,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -2212,18 +2257,19 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_6">
-            <span class="md-nav__icon md-icon"></span>
-            
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_3_6">
+              <span class="md-nav__icon md-icon"></span>
+              
   
   Image de-identification
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
               
                 
+                  
   
   
   
@@ -2247,10 +2293,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -2274,18 +2320,19 @@
     </li>
   
 
+                
               
-            
-          </ul>
-        </nav>
+            </ul>
+          </nav>
+        
       
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -2322,18 +2369,19 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_7">
-            <span class="md-nav__icon md-icon"></span>
-            
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_3_7">
+              <span class="md-nav__icon md-icon"></span>
+              
   
   Structured and Semi-structured
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
               
                 
+                  
   
   
   
@@ -2357,18 +2405,19 @@
     </li>
   
 
+                
               
-            
-          </ul>
-        </nav>
+            </ul>
+          </nav>
+        
       
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -2392,10 +2441,11 @@
     </li>
   
 
+                
               
-            
-          </ul>
-        </nav>
+            </ul>
+          </nav>
+        
       
     </li>
   
@@ -2439,18 +2489,19 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4">
-            <span class="md-nav__icon md-icon"></span>
-            
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_4">
+              <span class="md-nav__icon md-icon"></span>
+              
   
   Resources
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
               
                 
+                  
   
   
   
@@ -2474,10 +2525,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -2501,10 +2552,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -2528,10 +2579,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -2555,10 +2606,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -2582,10 +2633,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -2609,10 +2660,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -2636,10 +2687,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -2676,18 +2727,19 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_8">
-            <span class="md-nav__icon md-icon"></span>
-            
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_4_8">
+              <span class="md-nav__icon md-icon"></span>
+              
   
   Python API reference
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
               
                 
+                  
   
   
   
@@ -2711,10 +2763,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -2738,10 +2790,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -2765,10 +2817,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -2792,10 +2844,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -2819,18 +2871,19 @@
     </li>
   
 
+                
               
-            
-          </ul>
-        </nav>
+            </ul>
+          </nav>
+        
       
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -2854,10 +2907,11 @@
     </li>
   
 
+                
               
-            
-          </ul>
-        </nav>
+            </ul>
+          </nav>
+        
       
     </li>
   
@@ -2901,18 +2955,19 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5">
-            <span class="md-nav__icon md-icon"></span>
-            
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_5">
+              <span class="md-nav__icon md-icon"></span>
+              
   
   Recipes
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
               
                 
+                  
   
   
   
@@ -2936,10 +2991,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -2963,10 +3018,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -2990,10 +3045,11 @@
     </li>
   
 
+                
               
-            
-          </ul>
-        </nav>
+            </ul>
+          </nav>
+        
       
     </li>
   
@@ -3037,18 +3093,19 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6">
-            <span class="md-nav__icon md-icon"></span>
-            
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_6">
+              <span class="md-nav__icon md-icon"></span>
+              
   
   Samples
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
               
                 
+                  
   
   
   
@@ -3072,10 +3129,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -3112,18 +3169,19 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_2">
-            <span class="md-nav__icon md-icon"></span>
-            
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_6_2">
+              <span class="md-nav__icon md-icon"></span>
+              
   
   Text
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
               
                 
+                  
   
   
   
@@ -3147,10 +3205,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -3174,10 +3232,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -3201,10 +3259,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -3228,10 +3286,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -3255,10 +3313,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -3282,10 +3340,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -3309,10 +3367,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -3336,10 +3394,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -3363,10 +3421,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -3390,10 +3448,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -3417,10 +3475,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -3444,10 +3502,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -3471,10 +3529,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -3498,10 +3556,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -3525,10 +3583,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -3552,10 +3610,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -3579,10 +3637,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -3606,10 +3664,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -3633,18 +3691,19 @@
     </li>
   
 
+                
               
-            
-          </ul>
-        </nav>
+            </ul>
+          </nav>
+        
       
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -3681,18 +3740,19 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_3">
-            <span class="md-nav__icon md-icon"></span>
-            
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_6_3">
+              <span class="md-nav__icon md-icon"></span>
+              
   
   Data
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
               
                 
+                  
   
   
   
@@ -3716,10 +3776,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -3743,10 +3803,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -3770,18 +3830,19 @@
     </li>
   
 
+                
               
-            
-          </ul>
-        </nav>
+            </ul>
+          </nav>
+        
       
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -3818,18 +3879,19 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_4">
-            <span class="md-nav__icon md-icon"></span>
-            
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_6_4">
+              <span class="md-nav__icon md-icon"></span>
+              
   
   Images
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
               
                 
+                  
   
   
   
@@ -3853,10 +3915,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -3880,10 +3942,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -3907,10 +3969,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -3934,18 +3996,19 @@
     </li>
   
 
+                
               
-            
-          </ul>
-        </nav>
+            </ul>
+          </nav>
+        
       
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -3982,18 +4045,19 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_5">
-            <span class="md-nav__icon md-icon"></span>
-            
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_5_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_6_5">
+              <span class="md-nav__icon md-icon"></span>
+              
   
   PDF
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
               
                 
+                  
   
   
   
@@ -4017,18 +4081,19 @@
     </li>
   
 
+                
               
-            
-          </ul>
-        </nav>
+            </ul>
+          </nav>
+        
       
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -4065,18 +4130,19 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_6">
-            <span class="md-nav__icon md-icon"></span>
-            
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_6_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_6_6">
+              <span class="md-nav__icon md-icon"></span>
+              
   
   Deployment
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
               
                 
+                  
   
   
   
@@ -4100,10 +4166,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -4127,10 +4193,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -4154,10 +4220,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -4181,10 +4247,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -4208,10 +4274,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -4248,18 +4314,19 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_6_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_6_6">
-            <span class="md-nav__icon md-icon"></span>
-            
+        
+          <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_6_6_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_6_6_6">
+              <span class="md-nav__icon md-icon"></span>
+              
   
   Azure Data Factory
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
               
                 
+                  
   
   
   
@@ -4283,10 +4350,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -4310,10 +4377,10 @@
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -4337,18 +4404,19 @@
     </li>
   
 
+                
               
-            
-          </ul>
-        </nav>
+            </ul>
+          </nav>
+        
       
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -4372,18 +4440,46 @@
     </li>
   
 
+                
               
-            
-          </ul>
-        </nav>
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../samples/docker/aisix/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Protect LLM requests with Presidio and AISIX AI Gateway
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
       
     </li>
   
 
-              
-            
+                
               
                 
+                  
   
   
   
@@ -4420,18 +4516,19 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_7">
-            <span class="md-nav__icon md-icon"></span>
-            
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_7_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_6_7">
+              <span class="md-nav__icon md-icon"></span>
+              
   
   Demo app
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
               
                 
+                  
   
   
   
@@ -4455,18 +4552,20 @@
     </li>
   
 
+                
               
-            
-          </ul>
-        </nav>
+            </ul>
+          </nav>
+        
       
     </li>
   
 
+                
               
-            
-          </ul>
-        </nav>
+            </ul>
+          </nav>
+        
       
     </li>
   
@@ -4551,6 +4650,34 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#using-a-custom-registry-file-with-the-presidio-analyzer-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Using a custom registry file with the Presidio Analyzer server
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Using a custom registry file with the Presidio Analyzer server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-enabling-a-pattern-based-country-recognizer-for-en" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Example: enabling a pattern-based country recognizer for <code>en</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4563,11 +4690,13 @@
             <div class="md-content" data-md-component="content">
               
               <article class="md-content__inner md-typeset">
+                <a id="__skip" tabindex="-1"></a>
                 
 
 
 
                   
+
   
   
 
@@ -4577,7 +4706,7 @@
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">presidio_analyzer</span><span class="w"> </span><span class="kn">import</span> <span class="n">AnalyzerEngine</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">presidio_analyzer.recognizer_registry</span><span class="w"> </span><span class="kn">import</span> <span class="n">RecognizerRegistryProvider</span>
 
-<span class="n">recognizer_registry_conf_file</span> <span class="o">=</span> <span class="s2">&quot;./analyzer/recognizers-config.yml&quot;</span>
+<span class="n">recognizer_registry_conf_file</span> <span class="o">=</span> <span class="s2">"./analyzer/recognizers-config.yml"</span>
 
 <span class="n">provider</span> <span class="o">=</span> <span class="n">RecognizerRegistryProvider</span><span class="p">(</span>
                 <span class="n">conf_file</span><span class="o">=</span><span class="n">recognizer_registry_conf_file</span>
@@ -4585,7 +4714,7 @@
 <span class="n">registry</span> <span class="o">=</span> <span class="n">provider</span><span class="o">.</span><span class="n">create_recognizer_registry</span><span class="p">()</span>
 <span class="n">analyzer</span> <span class="o">=</span> <span class="n">AnalyzerEngine</span><span class="p">(</span><span class="n">registry</span><span class="o">=</span><span class="n">registry</span><span class="p">)</span>
 
-<span class="n">results</span> <span class="o">=</span> <span class="n">analyzer</span><span class="o">.</span><span class="n">analyze</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;My name is Morris&quot;</span><span class="p">,</span> <span class="n">language</span><span class="o">=</span><span class="s2">&quot;en&quot;</span><span class="p">)</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">analyzer</span><span class="o">.</span><span class="n">analyze</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">"My name is Morris"</span><span class="p">,</span> <span class="n">language</span><span class="o">=</span><span class="s2">"en"</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
 </code></pre></div>
 <h2 id="configuration-file-structure">Configuration file structure</h2>
@@ -4623,6 +4752,9 @@
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">language</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">it</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">language</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pl</span>
 <span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">predefined</span>
+<span class="w">    </span><span class="nt">score_thresholds</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">default</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.4</span>
+<span class="w">      </span><span class="nt">CREDIT_CARD</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.7</span>
 
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">UsBankRecognizer</span>
 <span class="w">    </span><span class="nt">supported_languages</span><span class="p">:</span><span class="w"> </span>
@@ -4634,33 +4766,33 @@
 
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ExampleCustomRecognizer</span>
 <span class="w">    </span><span class="nt">patterns</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;zip</span><span class="nv"> </span><span class="s">code</span><span class="nv"> </span><span class="s">(weak)&quot;</span>
-<span class="w">      </span><span class="nt">regex</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;(\\b\\d{5}(?:\\-\\d{4})?\\b)&quot;</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">"zip</span><span class="nv"> </span><span class="s">code</span><span class="nv"> </span><span class="s">(weak)"</span>
+<span class="w">      </span><span class="nt">regex</span><span class="p">:</span><span class="w"> </span><span class="s">"(\\b\\d{5}(?:\\-\\d{4})?\\b)"</span>
 <span class="w">      </span><span class="nt">score</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.01</span>
 <span class="w">    </span><span class="nt">supported_languages</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">language</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">en</span>
 <span class="w">      </span><span class="nt">context</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">zip</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">code</span><span class="p p-Indicator">]</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">language</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">es</span>
 <span class="w">      </span><span class="nt">context</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">código</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">postal</span><span class="p p-Indicator">]</span>
-<span class="w">    </span><span class="nt">supported_entity</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;ZIP&quot;</span>
+<span class="w">    </span><span class="nt">supported_entity</span><span class="p">:</span><span class="w"> </span><span class="s">"ZIP"</span>
 <span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">custom</span>
 <span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;TitlesRecognizer&quot;</span>
-<span class="w">    </span><span class="nt">supported_language</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;en&quot;</span>
-<span class="w">    </span><span class="nt">supported_entity</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;TITLE&quot;</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">"TitlesRecognizer"</span>
+<span class="w">    </span><span class="nt">supported_language</span><span class="p">:</span><span class="w"> </span><span class="s">"en"</span>
+<span class="w">    </span><span class="nt">supported_entity</span><span class="p">:</span><span class="w"> </span><span class="s">"TITLE"</span>
 <span class="w">    </span><span class="nt">deny_list</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">Mr.</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">Mrs.</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">Ms.</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">Miss</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">Dr.</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">Prof.</span><span class="p p-Indicator">]</span>
 <span class="w">    </span><span class="nt">deny_list_score</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
 
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;HuggingFace</span><span class="nv"> </span><span class="s">NER&quot;</span>
-<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;predefined&quot;</span>
-<span class="w">    </span><span class="nt">class_name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;HuggingFaceNerRecognizer&quot;</span>
-<span class="w">    </span><span class="nt">model_name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;dslim/bert-base-NER&quot;</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">"HuggingFace</span><span class="nv"> </span><span class="s">NER"</span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">"predefined"</span>
+<span class="w">    </span><span class="nt">class_name</span><span class="p">:</span><span class="w"> </span><span class="s">"HuggingFaceNerRecognizer"</span>
+<span class="w">    </span><span class="nt">model_name</span><span class="p">:</span><span class="w"> </span><span class="s">"dslim/bert-base-NER"</span>
 <span class="w">    </span><span class="nt">supported_languages</span><span class="p">:</span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">en</span>
-<span class="w">    </span><span class="nt">supported_entities</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;PERSON&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;LOCATION&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;ORGANIZATION&quot;</span><span class="p p-Indicator">]</span>
-<span class="w">    </span><span class="nt">aggregation_strategy</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;simple&quot;</span>
-<span class="w">    </span><span class="nt">device</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;cpu&quot;</span>
+<span class="w">    </span><span class="nt">supported_entities</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"PERSON"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"LOCATION"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"ORGANIZATION"</span><span class="p p-Indicator">]</span>
+<span class="w">    </span><span class="nt">aggregation_strategy</span><span class="p">:</span><span class="w"> </span><span class="s">"simple"</span>
+<span class="w">    </span><span class="nt">device</span><span class="p">:</span><span class="w"> </span><span class="s">"cpu"</span>
 </code></pre></div>
 <h3 id="the-recognizer-parameters">The recognizer parameters</h3>
 <ul>
@@ -4672,18 +4804,78 @@
 <li><code>enabled</code>: enables or disables the recognizer.</li>
 <li><code>supported_entity</code>: the detected entity associated by the recognizer.</li>
 <li><code>deny_list</code>: A list of words to detect, in case the recognizer uses a predefined list of words.</li>
-<li><code>deny_list_score</code>: confidence score for a term identified using a deny-list.</li>
+<li><code>deny_list_score</code>: confidence score for a term identified using a deny-list. If omitted, defaults to <code>1.0</code> (previously this silently defaulted to <code>0.0</code> when loaded through <code>RecognizerRegistryProvider</code>, which caused deny-list matches to be filtered out by any positive <code>score_threshold</code>).</li>
+<li><code>score_thresholds</code>: optional score thresholds for this recognizer. Use <code>default</code> as the recognizer-wide threshold and entity names for overrides. Note that supplying <code>analyzer_engine.analyze(score_threshold=...)</code> bypasses recognizer-level thresholds for that request. The precedence is: Presidio Analyzer analyzer.analyze(score_threshold=...) &gt; an entity specific threshold &gt; a recognizer default threshold (<code>default</code>) &gt; the Presidio Analyzer <code>default_score_threshold</code>.</li>
+<li>
+<p><code>text_chunker</code>: configures how long texts are split for NER recognizers (<code>GLiNERRecognizer</code>, <code>HuggingFaceNerRecognizer</code>). Accepts a dict with <code>chunker_type</code> and params. Available types: <code>character</code> (default) and <code>tokenizer</code> (uses the model's tokenizer for accurate token-based splitting). Example:</p>
+<div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GLiNERRecognizer</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">predefined</span>
+<span class="w">  </span><span class="nt">model_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">urchade/gliner_multi_pii-v1</span>
+<span class="w">  </span><span class="nt">text_chunker</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">chunker_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tokenizer</span>
+<span class="w">    </span><span class="c1"># max_tokens omitted: auto-derived from the model's tokenizer and</span>
+<span class="w">    </span><span class="c1"># reduced to reserve room for special tokens ([CLS]/[SEP]). Set it</span>
+<span class="w">    </span><span class="c1"># explicitly only if you account for those special tokens yourself.</span>
+<span class="w">    </span><span class="nt">overlap_tokens</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">32</span>
+</code></pre></div>
+</li>
 </ul>
 <div class="admonition tip">
 <p class="admonition-title">Configuration Tip: Agglutinative languages (e.g., Korean)</p>
 <p>If spaCy-based NER produces noisy or redundant results, you can disable <code>SpacyRecognizer</code> and use <code>HuggingFaceNerRecognizer</code> as an alternative. Note that <code>HuggingFaceNerRecognizer</code> bypasses the spaCy tokenizer alignment mechanism.</p>
-<div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;SpacyRecognizer&quot;</span>
-<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;predefined&quot;</span>
-<span class="w">  </span><span class="nt">class_name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;SpacyRecognizer&quot;</span>
-<span class="w">  </span><span class="nt">supported_languages</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;ko&quot;</span><span class="p p-Indicator">]</span>
+<div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">"SpacyRecognizer"</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">"predefined"</span>
+<span class="w">  </span><span class="nt">class_name</span><span class="p">:</span><span class="w"> </span><span class="s">"SpacyRecognizer"</span>
+<span class="w">  </span><span class="nt">supported_languages</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"ko"</span><span class="p p-Indicator">]</span>
 <span class="w">  </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
 </code></pre></div>
 </div>
+<h2 id="using-a-custom-registry-file-with-the-presidio-analyzer-server">Using a custom registry file with the Presidio Analyzer server</h2>
+<p>The Presidio Analyzer server (the <code>presidio-analyzer</code> Docker image) selects
+its recognizer registry through the <code>RECOGNIZER_REGISTRY_CONF_FILE</code>
+environment variable. It defaults to the bundled
+<code>presidio_analyzer/conf/default_recognizers.yaml</code>; point it at your own YAML
+file (mounted into the container) to load a modified registry without
+rebuilding the image. The server reads <code>ANALYZER_CONF_FILE</code> and
+<code>NLP_CONF_FILE</code> the same way.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code>supported_languages</code> in the registry file must match the same field in
+the analyzer configuration file.</p>
+</div>
+<h3 id="example-enabling-a-pattern-based-country-recognizer-for-en">Example: enabling a pattern-based country recognizer for <code>en</code></h3>
+<p>Some predefined recognizers are only registered for their native language.
+<code>ItFiscalCodeRecognizer</code>, for example, is registered with
+<code>supported_languages: [it]</code> in <code>default_recognizers.yaml</code>, so the default
+image — which loads the <code>en</code> NLP model and <code>supported_languages: [en]</code> —
+cannot detect Italian fiscal codes. Because the recognizer is pattern-based,
+it does not depend on the Italian NLP model and can be enabled for <code>en</code> by
+overriding the registry file:</p>
+<ol>
+<li>
+<p>Copy the default registry file and change the recognizer's
+<code>supported_languages</code> (leave <code>country_code</code> unchanged — it must match the
+class declaration and is only the country tag, not a language):</p>
+<div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ItFiscalCodeRecognizer</span>
+<span class="w">  </span><span class="nt">supported_languages</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">en</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">predefined</span>
+<span class="w">  </span><span class="nt">country_code</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">it</span>
+</code></pre></div>
+</li>
+<li>
+<p>Run the analyzer with the file mounted and the environment variable set:</p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>-p<span class="w"> </span><span class="m">3000</span>:3000<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-v<span class="w"> </span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>/my_recognizers.yaml:/app/my_recognizers.yaml<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-e<span class="w"> </span><span class="nv">RECOGNIZER_REGISTRY_CONF_FILE</span><span class="o">=</span>/app/my_recognizers.yaml<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>ghcr.io/data-privacy-stack/presidio-analyzer:&lt;version&gt;
+</code></pre></div>
+</li>
+</ol>
+<p>Requests with <code>entities: ["IT_FISCAL_CODE"]</code> are now served for
+<code>language: en</code>.</p>
+<p>To restrict or extend which country-specific recognizers are loaded in
+general, see <a href="../filtering_by_country/">Filtering recognizers by country</a>.</p>
 
 
 
@@ -4786,7 +4978,7 @@
       
     
     <a href="https://github.com/data-privacy-stack/presidio" target="_blank" rel="noopener" title="github.com" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M216.5 362.5c-66-8-112.5-55.5-112.5-117 0-25 9-52 24-70-6.5-16.5-5.5-51.5 2-66 20-2.5 47 8 63 22.5 19-6 39-9 63.5-9s44.5 3 62.5 8.5c15.5-14 43-24.5 63-22 7 13.5 8 48.5 1.5 65.5 16 19 24.5 44.5 24.5 70.5 0 61.5-46.5 108-113.5 116.5 17 11 28.5 35 28.5 62.5v52c0 15 12.5 23.5 27.5 17.5C441 459.5 512 369 512 257 512 115.5 397 0 255.5 0S0 115.5 0 257c0 111 70.5 203 165.5 237.5 13.5 5 26.5-4 26.5-17.5v-40c-7 3-16 5-24 5-33 0-52.5-18-66.5-51.5-5.5-13.5-11.5-21.5-23-23-6-.5-8-3-8-6 0-6 10-10.5 20-10.5 14.5 0 27 9 40 27.5 10 14.5 20.5 21 33 21s20.5-4.5 32-16c8.5-8.5 15-16 21-21"/></svg>
     </a>
   
     
@@ -4797,7 +4989,7 @@
       
     
     <a href="https://discord.gg/MewtBGFquB" target="_blank" rel="noopener" title="discord.gg" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M492.5 69.8c-.2-.3-.4-.6-.8-.7-38.1-17.5-78.4-30-119.7-37.1-.4-.1-.8 0-1.1.1s-.6.4-.8.8c-5.5 9.9-10.5 20.2-14.9 30.6-44.6-6.8-89.9-6.8-134.4 0-4.5-10.5-9.5-20.7-15.1-30.6-.2-.3-.5-.6-.8-.8s-.7-.2-1.1-.2C162.5 39 122.2 51.5 84.1 69c-.3.1-.6.4-.8.7C7.1 183.5-13.8 294.6-3.6 404.2c0 .3.1.5.2.8s.3.4.5.6c44.4 32.9 94 58 146.8 74.2.4.1.8.1 1.1 0s.7-.4.9-.7c11.3-15.4 21.4-31.8 30-48.8.1-.2.2-.5.2-.8s0-.5-.1-.8-.2-.5-.4-.6-.4-.3-.7-.4c-15.8-6.1-31.2-13.4-45.9-21.9-.3-.2-.5-.4-.7-.6s-.3-.6-.3-.9 0-.6.2-.9.3-.5.6-.7c3.1-2.3 6.2-4.7 9.1-7.1.3-.2.6-.4.9-.4s.7 0 1 .1c96.2 43.9 200.4 43.9 295.5 0 .3-.1.7-.2 1-.2s.7.2.9.4c2.9 2.4 6 4.9 9.1 7.2.2.2.4.4.6.7s.2.6.2.9-.1.6-.3.9-.4.5-.6.6c-14.7 8.6-30 15.9-45.9 21.8-.2.1-.5.2-.7.4s-.3.4-.4.7-.1.5-.1.8.1.5.2.8c8.8 17 18.8 33.3 30 48.8.2.3.6.6.9.7s.8.1 1.1 0c52.9-16.2 102.6-41.3 147.1-74.2.2-.2.4-.4.5-.6s.2-.5.2-.8c12.3-126.8-20.5-236.9-86.9-334.5zm-302 267.7c-29 0-52.8-26.6-52.8-59.2s23.4-59.2 52.8-59.2c29.7 0 53.3 26.8 52.8 59.2 0 32.7-23.4 59.2-52.8 59.2m195.4 0c-29 0-52.8-26.6-52.8-59.2s23.4-59.2 52.8-59.2c29.7 0 53.3 26.8 52.8 59.2 0 32.7-23.2 59.2-52.8 59.2"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M492.5 69.8c-.2-.3-.4-.6-.8-.7-38.1-17.5-78.4-30-119.7-37.1-.4-.1-.8 0-1.1.1s-.6.4-.8.8c-5.5 9.9-10.5 20.2-14.9 30.6-44.6-6.8-89.9-6.8-134.4 0-4.5-10.5-9.5-20.7-15.1-30.6-.2-.3-.5-.6-.8-.8s-.7-.2-1.1-.2C162.5 39 122.2 51.5 84.1 69c-.3.1-.6.4-.8.7C7.1 183.5-13.8 294.6-3.6 404.2c0 .3.1.5.2.8s.3.4.5.6c44.4 32.9 94 58 146.8 74.2.4.1.8.1 1.1 0s.7-.4.9-.7c11.3-15.4 21.4-31.8 30-48.8.1-.2.2-.5.2-.8s0-.5-.1-.8-.2-.5-.4-.6-.4-.3-.7-.4c-15.8-6.1-31.2-13.4-45.9-21.9-.3-.2-.5-.4-.7-.6s-.3-.6-.3-.9 0-.6.2-.9.3-.5.6-.7c3.1-2.3 6.2-4.7 9.1-7.1.3-.2.6-.4.9-.4s.7 0 1 .1c96.2 43.9 200.4 43.9 295.5 0 .3-.1.7-.2 1-.2s.7.2.9.4c2.9 2.4 6 4.9 9.1 7.2.2.2.4.4.6.7s.2.6.2.9-.1.6-.3.9-.4.5-.6.6c-14.7 8.6-30 15.9-45.9 21.8-.2.1-.5.2-.7.4s-.3.4-.4.7-.1.5-.1.8.1.5.2.8c8.8 17 18.8 33.3 30 48.8.2.3.6.6.9.7s.8.1 1.1 0c52.9-16.2 102.6-41.3 147.1-74.2.2-.2.4-.4.5-.6s.2-.5.2-.8c12.3-126.8-20.5-236.9-86.9-334.5zm-302 267.7c-29 0-52.8-26.6-52.8-59.2s23.4-59.2 52.8-59.2c29.7 0 53.3 26.8 52.8 59.2 0 32.7-23.4 59.2-52.8 59.2m195.4 0c-29 0-52.8-26.6-52.8-59.2s23.4-59.2 52.8-59.2c29.7 0 53.3 26.8 52.8 59.2 0 32.7-23.2 59.2-52.8 59.2"/></svg>
     </a>
   
     
@@ -4808,7 +5000,7 @@
       
     
     <a href="https://github.com/orgs/data-privacy-stack/packages" target="_blank" rel="noopener" title="github.com" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M349.9 236.3h-66.1v-59.4h66.1zm0-204.3h-66.1v60.7h66.1zm78.2 144.8H362v59.4h66.1zm-156.3-72.1h-66.1v60.1h66.1zm78.1 0h-66.1v60.1h66.1zm276.8 100c-14.4-9.7-47.6-13.2-73.1-8.4-3.3-24-16.7-44.9-41.1-63.7l-14-9.3-9.3 14c-18.4 27.8-23.4 73.6-3.7 103.8-8.7 4.7-25.8 11.1-48.4 10.7H2.4c-8.7 50.8 5.8 116.8 44 162.1 37.1 43.9 92.7 66.2 165.4 66.2 157.4 0 273.9-72.5 328.4-204.2 21.4.4 67.6.1 91.3-45.2 1.5-2.5 6.6-13.2 8.5-17.1zm-511.1-27.9h-66v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1zm78.1 0h-66.1v59.4h66.1zm-78.1-72.1h-66.1v60.1h66.1z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M349.9 236.3h-66.1v-59.4h66.1zm0-204.3h-66.1v60.7h66.1zm78.2 144.8H362v59.4h66.1zm-156.3-72.1h-66.1v60.1h66.1zm78.1 0h-66.1v60.1h66.1zm276.8 100c-14.4-9.7-47.6-13.2-73.1-8.4-3.3-24-16.7-44.9-41.1-63.7l-14-9.3-9.3 14c-18.4 27.8-23.4 73.6-3.7 103.8-8.7 4.7-25.8 11.1-48.4 10.7H2.4c-8.7 50.8 5.8 116.8 44 162.1 37.1 43.9 92.7 66.2 165.4 66.2 157.4 0 273.9-72.5 328.4-204.2 21.4.4 67.6.1 91.3-45.2 1.5-2.5 6.6-13.2 8.5-17.1zm-511.1-27.9h-66v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1zm78.1 0h-66.1v59.4h66.1zm-78.1-72.1h-66.1v60.1h66.1z"/></svg>
     </a>
   
     
@@ -4816,7 +5008,7 @@
     
     
     <a href="mailto:presidio@dataprivacystack.org" target="_blank" rel="noopener" title="" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4l208 156a48 48 0 0 0 57.6 0l208-156c12.1-9.1 19.2-23.3 19.2-38.4 0-26.5-21.5-48-48-48zM0 196v188c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64V196L313.6 344.8c-34.1 25.6-81.1 25.6-115.2 0z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4l208 156a48 48 0 0 0 57.6 0l208-156c12.1-9.1 19.2-23.3 19.2-38.4 0-26.5-21.5-48-48-48zM0 196v188c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64V196L313.6 344.8c-34.1 25.6-81.1 25.6-115.2 0z"/></svg>
     </a>
   
     
@@ -4827,7 +5019,7 @@
       
     
     <a href="https://huggingface.co/spaces/presidio/presidio_demo" target="_blank" rel="noopener" title="huggingface.co" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M493.7.9 299.5 75.6l2.3-29.3c1-12.8-12.8-21.5-24-15.1L101.3 133.4C38.6 169.7 0 236.6 0 309c0 112.1 90.9 203 203 203 72.4 0 139.3-38.6 175.6-101.3l102.2-176.4c6.5-11.1-2.2-25-15.1-24l-29.3 2.3 74.7-194.2c.6-1.5.9-3.2.9-4.8 0-7.5-6-13.5-13.5-13.5q-2.55 0-4.8.9zM192 192a128 128 0 1 1 0 256 128 128 0 1 1 0-256m0 96a32 32 0 1 0-64 0 32 32 0 1 0 64 0m16 96a16 16 0 1 0 0-32 16 16 0 1 0 0 32"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M493.7.9 299.5 75.6l2.3-29.3c1-12.8-12.8-21.5-24-15.1L101.3 133.4C38.6 169.7 0 236.6 0 309c0 112.1 90.9 203 203 203 72.4 0 139.3-38.6 175.6-101.3l102.2-176.4c6.5-11.1-2.2-25-15.1-24l-29.3 2.3 74.7-194.2c.6-1.5.9-3.2.9-4.8 0-7.5-6-13.5-13.5-13.5q-2.55 0-4.8.9zM192 192a128 128 0 1 1 0 256 128 128 0 1 1 0-256m0 96a32 32 0 1 0-64 0 32 32 0 1 0 64 0m16 96a16 16 0 1 0 0-32 16 16 0 1 0 0 32"/></svg>
     </a>
   
 </div>
@@ -4837,20 +5029,25 @@
 </footer>
       
     </div>
-    <div class="md-dialog" data-md-component="dialog">
+    <div class="md-dialog" data-md-component="dialog" role="status" aria-atomic="true">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+      
+<div class="md-progress" data-md-component="progress" role="progressbar" aria-label="Loading"></div>
     
     
     
       
       
-      <script id="__config" type="application/json">{"annotate":null,"base":"../..","features":["navigation.instant","navigation.instant.progress","content.tabs.link","content.code.copy","content.code.annotate","navigation.tabs","navigation.tabs.sticky","navigation.top","navigation.footer","search.suggest","search.highlight","toc.follow"],"search":"../../assets/javascripts/workers/search.b6b7e04f.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":null}</script>
+      
+      
+        
+        
+      <script id="__config" type="application/json">{"annotate":null,"base":"../..","features":["navigation.instant","navigation.instant.progress","content.tabs.link","content.code.copy","content.code.annotate","navigation.tabs","navigation.tabs.sticky","navigation.top","navigation.footer","search.suggest","search.highlight","toc.follow"],"redirect":null,"search":"../../assets/javascripts/workers/search.c47bb847.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","clipboard.error":"Could not copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.ee611ef6.min.js"></script>
+      <script src="../../assets/javascripts/bundle.10ee5ab6.min.js"></script>
       
     
   </body>
