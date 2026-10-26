@@ -143,6 +143,10 @@ Reviewers hold PRs to this, not only to correctness.
 - Impact on accuracy. If the change might reduce detection accuracy (missed PII,
   likely false positives, changed scores for existing inputs), say so in the PR
   description and explain the trade-off.
+- Impact on security. If anything in the change might smell like a security
+  issue (PII leakage, unsafe handling of untrusted input, or denial of service
+  such as regex backtracking or missing timeouts on external calls), say so in
+  the PR description and explain how it is mitigated.
 - Tests cover behavior at the public boundary. No tests of log text, message
   wording, private helpers, or mock calls. One test per behavior.
 - Docstrings: public APIs get a summary and full `:param:` list; no docstring

@@ -34,8 +34,8 @@ current branch against `main`; use it before opening a PR.
 5. In the affected package run `uv run ruff check .` and the tests closest to the
    change (`uv run pytest <touched test files>`). Report failures, do not fix.
 6. Judge the diff against the Code quality bar in `AGENTS.md`: simplicity,
-   fix at the source, extensibility, tests, docstrings and docs. One line per
-   violation, cite file:line.
+   fix at the source, extensibility, accuracy and security impact, tests,
+   docstrings and docs. One line per violation, cite file:line.
 
 ## Output, nothing else
 

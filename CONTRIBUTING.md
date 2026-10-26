@@ -24,7 +24,7 @@ By submitting a contribution, you represent that you have the legal right to con
 
 Commit message should be clear, explaining the committed changes.
 
-Presidio is a library: users depend on current detection behavior. If your change alters existing behavior (for example patterns, scores, defaults, or which entities are returned) or may reduce detection accuracy, say so in the PR description and explain the trade-off.
+Presidio is a library: users depend on current detection behavior. If your change alters existing behavior (for example patterns, scores, defaults, or which entities are returned) or may reduce detection accuracy, say so in the PR description and explain the trade-off. The same applies to anything that might smell like a security issue, including denial of service through regex backtracking or missing timeouts: state it and explain how it is mitigated.
 
 Do not update `CHANGELOG.md` as part of your PR. Before each version bump, the
 changelog entries for the current release are generated from merged PRs.
