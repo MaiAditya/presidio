@@ -34,10 +34,11 @@ current branch against `main`; use it before opening a PR.
 5. Run checks only when the working tree is clean and `HEAD` is the PR head
    commit (`gh pr view <n> --json headRefOid` against `git rev-parse HEAD`);
    for the current branch, `HEAD` always qualifies. Then, in the affected
-   package, run `uv run ruff check .` and the tests closest to the change
-   (`uv run pytest <touched test files>`). Report failures, do not fix. If the
-   checkout does not match, report tests and lint as not run and say why. Never
-   switch branches or alter the user's checkout.
+   package, run `uv run --locked ruff check .` and the tests closest to the
+   change (`uv run --locked pytest <touched test files>`); `--locked` reports
+   lockfile drift as a failure instead of rewriting `uv.lock`. Report failures,
+   do not fix. If the checkout does not match, report tests and lint as not run
+   and say why. Never switch branches or alter the user's checkout.
 6. Judge the diff against the Code quality bar in `AGENTS.md`: simplicity,
    fix at the source, extensibility, accuracy and security impact, tests,
    docstrings and docs. One line per violation, cite file:line.
