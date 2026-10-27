@@ -12,7 +12,7 @@
         <meta name="author" content="Data Privacy Stack">
       
       
-        <link rel="canonical" href="https://data-privacy-stack.github.io/presidio/development/">
+        <link rel="canonical" href="https://presidio.dataprivacystack.org/development/">
       
       
       
@@ -26,7 +26,7 @@
       
       
       <link rel="icon" href="../assets/dps-icon.svg">
-      <meta name="generator" content="zensical-0.0.72">
+      <meta name="generator" content="zensical-0.0.73">
     
     
       
@@ -4956,6 +4956,10 @@ CONTAINER<span class="w"> </span>ID<span class="w">   </span>IMAGE<span class="w
 For example for analyzer service:</p>
 <div class="highlight"><pre><span></span><code>docker-compose<span class="w"> </span>up<span class="w"> </span>--build<span class="w"> </span>-d<span class="w"> </span>presidio-analyzer
 </code></pre></div>
+<p>To run the distroless analyzer and anonymizer images (built from <code>Dockerfile.distroless</code>) instead of the default ones,
+layer the override file on top. It starts only these two services, on the same host ports:</p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>compose<span class="w"> </span>-f<span class="w"> </span>docker-compose.yml<span class="w"> </span>-f<span class="w"> </span>docker-compose.distroless.yml<span class="w"> </span>up<span class="w"> </span>--build<span class="w"> </span>-d
+</code></pre></div>
 <h3 id="testing">Testing</h3>
 <p>We strive to have a full test coverage in Presidio, and expect every pull request to
 include tests.</p>
@@ -5035,7 +5039,10 @@ deactivate
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The e2e tests require a Presidio cluster to be up, for example using the containerized cluster with docker-compose.</p>
+<p>The e2e tests require a Presidio cluster to be up, for example using the containerized cluster with docker-compose.
+To test the distroless images, start the cluster with <code>docker-compose.distroless.yml</code> (see above) and run
+<code>pytest -m "not package" --ignore=tests/test_api_image_redactor.py</code>, as there is no distroless image-redactor.
+CI runs the e2e tests against both the default and the distroless images.</p>
 </div>
 <h3 id="linting">Linting</h3>
 <p>Presidio services are PEP8 compliant and continuously enforced on style guide issues during the build process using <code>ruff</code>, in turn running <code>flake8</code> and other linters.</p>
@@ -5243,7 +5250,7 @@ ruff-format..............................................................Failed
       <script id="__config" type="application/json">{"annotate":null,"base":"..","features":["navigation.instant","navigation.instant.progress","content.tabs.link","content.code.copy","content.code.annotate","navigation.tabs","navigation.tabs.sticky","navigation.top","navigation.footer","search.suggest","search.highlight","toc.follow"],"redirect":null,"search":"../assets/javascripts/workers/search.c47bb847.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","clipboard.error":"Could not copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":null}</script>
     
     
-      <script src="../assets/javascripts/bundle.10ee5ab6.min.js"></script>
+      <script src="../assets/javascripts/bundle.77dd0ce9.min.js"></script>
       
     
   </body>

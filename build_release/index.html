@@ -12,7 +12,7 @@
         <meta name="author" content="Data Privacy Stack">
       
       
-        <link rel="canonical" href="https://data-privacy-stack.github.io/presidio/build_release/">
+        <link rel="canonical" href="https://presidio.dataprivacystack.org/build_release/">
       
       
       
@@ -26,7 +26,7 @@
       
       
       <link rel="icon" href="../assets/dps-icon.svg">
-      <meta name="generator" content="zensical-0.0.72">
+      <meta name="generator" content="zensical-0.0.73">
     
     
       
@@ -4676,7 +4676,8 @@
 <li><a href="https://github.com/orgs/data-privacy-stack/packages/container/package/presidio-anonymizer"><code>ghcr.io/data-privacy-stack/presidio-anonymizer</code></a></li>
 <li><a href="https://github.com/orgs/data-privacy-stack/packages/container/package/presidio-image-redactor"><code>ghcr.io/data-privacy-stack/presidio-image-redactor</code></a></li>
 </ul>
-<p>The legacy Microsoft Container Registry images at <code>mcr.microsoft.com/presidio-*</code> are no longer updated. Existing MCR tags can still be pulled for older deployments, but users should update image references to GHCR before upgrading. For example:</p>
+<p>The analyzer and anonymizer are also published as distroless images in the same repositories, built from <code>Dockerfile.distroless</code> and tagged with a <code>-distroless</code> suffix (for example <code>presidio-analyzer:latest-distroless</code> and <code>presidio-analyzer:&lt;release-version&gt;-distroless</code>, plus per-platform <code>-linux-amd64</code> and <code>-linux-arm64</code> tags). The unsuffixed tags, including <code>latest</code>, remain the default images. There is no distroless image-redactor. CI runs the e2e tests against both the default and the distroless images.
+The legacy Microsoft Container Registry images at <code>mcr.microsoft.com/presidio-*</code> are no longer updated. Existing MCR tags can still be pulled for older deployments, but users should update image references to GHCR before upgrading. For example:</p>
 <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>pull<span class="w"> </span>ghcr.io/data-privacy-stack/presidio-analyzer:latest
 </code></pre></div>
 <p>For production deployments, avoid relying on the moving <code>latest</code> tag. Pin the release tag shown on the relevant <a href="https://github.com/orgs/data-privacy-stack/packages">GitHub Packages page</a>, for example:</p>
@@ -4871,7 +4872,7 @@
       <script id="__config" type="application/json">{"annotate":null,"base":"..","features":["navigation.instant","navigation.instant.progress","content.tabs.link","content.code.copy","content.code.annotate","navigation.tabs","navigation.tabs.sticky","navigation.top","navigation.footer","search.suggest","search.highlight","toc.follow"],"redirect":null,"search":"../assets/javascripts/workers/search.c47bb847.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","clipboard.error":"Could not copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":null}</script>
     
     
-      <script src="../assets/javascripts/bundle.10ee5ab6.min.js"></script>
+      <script src="../assets/javascripts/bundle.77dd0ce9.min.js"></script>
       
     
   </body>

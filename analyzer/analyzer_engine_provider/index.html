@@ -12,7 +12,7 @@
         <meta name="author" content="Data Privacy Stack">
       
       
-        <link rel="canonical" href="https://data-privacy-stack.github.io/presidio/analyzer/analyzer_engine_provider/">
+        <link rel="canonical" href="https://presidio.dataprivacystack.org/analyzer/analyzer_engine_provider/">
       
       
       
@@ -26,7 +26,7 @@
       
       
       <link rel="icon" href="../../assets/dps-icon.svg">
-      <meta name="generator" content="zensical-0.0.72">
+      <meta name="generator" content="zensical-0.0.73">
     
     
       
@@ -4772,6 +4772,11 @@ Configuration can be loaded in three different ways:</p>
 
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ItFiscalCodeRecognizer</span>
 <span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">predefined</span>
+
+<span class="nt">context_aware_enhancer</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">context_prefix_count</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span>
+<span class="w">  </span><span class="nt">context_suffix_count</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span>
+<span class="w">  </span><span class="nt">context_matching_mode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">whole_word</span>
 </code></pre></div>
 <p>The configuration file contains the following parameters:</p>
 <ul>
@@ -4779,6 +4784,7 @@ Configuration can be loaded in three different ways:</p>
 <li><code>default_score_threshold</code>: A score that determines the minimal threshold for detection.</li>
 <li><code>nlp_configuration</code>: Configuration given to the NLP engine which will detect the PIIs and extract features for the downstream logic.</li>
 <li><code>recognizer_registry</code>: All the recognizers that will be used by the analyzer. Each recognizer entry can define <code>score_thresholds</code>, using <code>default</code> as its fallback and entity names for overrides.</li>
+<li><code>context_aware_enhancer</code> (optional): Parameters for the <code>LemmaContextAwareEnhancer</code> that boosts scores when context words appear around a match. Supported keys are <code>context_similarity_factor</code> (default <code>0.35</code>) and <code>min_score_with_context_similarity</code> (default <code>0.4</code>), both between 0 and 1; <code>context_prefix_count</code> (default <code>5</code>) and <code>context_suffix_count</code> (default <code>0</code>), the number of words before and after the match to search for context, both non-negative integers; and <code>context_matching_mode</code>, either <code>substring</code> (default) or <code>whole_word</code>. Omitted keys keep their defaults, unknown keys are rejected, and leaving out the whole section keeps the default enhancer. Setting <code>context_suffix_count</code> helps languages that often place the context word after the value, such as German or Turkish ("05xx xxx xx xx numaralı telefonum").</li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Defining confidence thresholds</p>
@@ -4787,6 +4793,10 @@ Configuration can be loaded in three different ways:</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p><code>supported_languages</code> must be identical to the same field in recognizer_registry</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Context-aware enhancer with the NoOp NLP engine</p>
+<p>The <code>NoOpNlpEngine</code> produces no tokens or lemmas, so the enhancer can only use context passed explicitly to <code>analyze()</code>. Configuring <code>context_aware_enhancer</code> together with <code>nlp_engine_name: no_op</code> therefore emits a <code>UserWarning</code> when the engine is created.</p>
 </div>
 <h2 id="using-multiple-files">Using multiple files</h2>
 <p>Create an <code>AnalyzerEngineProvider</code> using three different configuration files for each of the following components:</p>
@@ -5117,7 +5127,7 @@ When used with <code>AnalyzerEngine</code> and a context enhancer, these words b
       <script id="__config" type="application/json">{"annotate":null,"base":"../..","features":["navigation.instant","navigation.instant.progress","content.tabs.link","content.code.copy","content.code.annotate","navigation.tabs","navigation.tabs.sticky","navigation.top","navigation.footer","search.suggest","search.highlight","toc.follow"],"redirect":null,"search":"../../assets/javascripts/workers/search.c47bb847.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","clipboard.error":"Could not copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.10ee5ab6.min.js"></script>
+      <script src="../../assets/javascripts/bundle.77dd0ce9.min.js"></script>
       
     
   </body>

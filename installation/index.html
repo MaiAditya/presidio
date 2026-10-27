@@ -12,7 +12,7 @@
         <meta name="author" content="Data Privacy Stack">
       
       
-        <link rel="canonical" href="https://data-privacy-stack.github.io/presidio/installation/">
+        <link rel="canonical" href="https://presidio.dataprivacystack.org/installation/">
       
       
       
@@ -26,7 +26,7 @@
       
       
       <link rel="icon" href="../assets/dps-icon.svg">
-      <meta name="generator" content="zensical-0.0.72">
+      <meta name="generator" content="zensical-0.0.73">
     
     
       
@@ -4819,7 +4819,6 @@ or <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/mana
 <h3 id="supported-python-versions">Supported Python Versions</h3>
 <p>Presidio is supported for the following python versions:</p>
 <ul>
-<li>3.10</li>
 <li>3.11</li>
 <li>3.12</li>
 <li>3.13</li>
@@ -4941,7 +4940,7 @@ For example, for the <code>presidio-anonymizer</code> service:</p>
 <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>build<span class="w"> </span>./presidio-anonymizer<span class="w"> </span>-t<span class="w"> </span>presidio/presidio-anonymizer
 </code></pre></div>
 <p>And run:</p>
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>-p<span class="w"> </span><span class="m">5001</span>:5001<span class="w"> </span>presidio/presidio-anonymizer
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>-p<span class="w"> </span><span class="m">5001</span>:3000<span class="w"> </span>presidio/presidio-anonymizer
 </code></pre></div>
 <hr />
 <p>For more information on developing locally,
@@ -5117,7 +5116,7 @@ refer to the <a href="../development/">setting up a development environment</a> 
       <script id="__config" type="application/json">{"annotate":null,"base":"..","features":["navigation.instant","navigation.instant.progress","content.tabs.link","content.code.copy","content.code.annotate","navigation.tabs","navigation.tabs.sticky","navigation.top","navigation.footer","search.suggest","search.highlight","toc.follow"],"redirect":null,"search":"../assets/javascripts/workers/search.c47bb847.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","clipboard.error":"Could not copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":null}</script>
     
     
-      <script src="../assets/javascripts/bundle.10ee5ab6.min.js"></script>
+      <script src="../assets/javascripts/bundle.77dd0ce9.min.js"></script>
       
     
   </body>
