@@ -146,7 +146,7 @@ concrete simplification proposed.
 
 ## Repository Context
 
-- **Python** `>=3.10,<3.15` — code must run on every version in range.
+- **Python** `>=3.11,<3.15` — code must run on every version in range.
 - **uv** for dependency management (not pip/Poetry); each package commits a
   `uv.lock`. Whenever a package's `pyproject.toml` dependencies change,
   regenerate and commit that package's `uv.lock` in the same change
