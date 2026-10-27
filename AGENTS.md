@@ -147,8 +147,10 @@ Reviewers hold PRs to this, not only to correctness.
   issue (PII leakage, unsafe handling of untrusted input, or denial of service
   such as regex backtracking or missing timeouts on external calls), say so in
   the PR description and explain how it is mitigated.
-- Tests cover behavior at the public boundary. No tests of log text, message
-  wording, private helpers, or mock calls. One test per behavior.
+- Tests cover behavior at the public boundary. No tests of log text, private
+  helpers, or mock calls. Error messages shown to users, such as YAML
+  validation errors, are part of the public behavior and are asserted on. One
+  test per behavior.
 - Docstrings: public APIs get a summary and full `:param:` list; no docstring
   describes implementation. Docs are high-level, plain language, no
   parameter-by-parameter detail.
