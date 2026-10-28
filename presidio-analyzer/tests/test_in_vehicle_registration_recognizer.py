@@ -1,9 +1,9 @@
 import pytest
-
 from presidio_analyzer import AnalyzerEngine
-from presidio_analyzer.recognizer_registry import RecognizerRegistryProvider
-from tests import assert_result
 from presidio_analyzer.predefined_recognizers import InVehicleRegistrationRecognizer
+from presidio_analyzer.recognizer_registry import RecognizerRegistryProvider
+
+from tests import assert_result
 
 
 @pytest.fixture(scope="module")
@@ -34,19 +34,30 @@ def entities():
         ("My Bike's registration number is OD02BA2341 with a lot of text beyond",
          1, (33, 43), 1),
         # Plates are commonly written with spaces or hyphens between groups.
-        ("MH 12 AB 1234", 1, (0, 13), 1),
-        ("KA-01-EA-1234", 1, (0, 13), 1),
-        ("DL 3C AB 1234", 1, (0, 13), 1),
-        ("DL-3C-AB-1234", 1, (0, 13), 1),
-        ("XY 99 AB 1234", 1, (0, 13), 0.50),
-        ("RTA: vehicle MH 12 AB 1234 vs two-wheeler", 1, (13, 26), 1),
-        # Mixed separators, a 0000 series and vitals of the same shape
-        # are not plates.
+        # Separated forms stay at the weak pattern score: validation only
+        # drops an unknown state or district, and context lifts real plates.
+        ("MH 12 AB 1234", 1, (0, 13), 0.30),
+        ("KA-01-EA-1234", 1, (0, 13), 0.30),
+        ("DL 3C AB 1234", 1, (0, 13), 0.30),
+        ("DL-3C-AB-1234", 1, (0, 13), 0.30),
+        ("DL 3 CAB 1234", 1, (0, 13), 0.30),
+        ("mh 12 ab 1234", 1, (0, 13), 0.30),
+        ("RTA: vehicle MH 12 AB 1234 vs two-wheeler", 1, (13, 26), 0.30),
+        # Unknown state or district code: dropped.
+        ("XY 99 AB 1234", 0, (), (),),
+        ("MH 99 AB 1234", 0, (), (),),
+        # Mixed separators and a 0000 series are not plates.
         ("MH 12-AB 1234", 0, (), (),),
         ("MH 12 AB 0000", 0, (), (),),
+        # Clinical and pharmacy text of the same shape, often upper case.
         ("HR 72 BP 120", 0, (), (),),
-        ("give 5 or 10 mg 1000 units", 0, (), (),),
-        ("titrate up 10 mg 1000", 0, (), (),),
+        ("PO 1 BD 1000", 0, (), (),),
+        ("PO 10 MG 1000", 0, (), (),),
+        ("IV 12 MG 1234", 0, (), (),),
+        ("SC 5 MG 2000", 0, (), (),),
+        ("GIVE 5 OR 10 MG 1000 UNITS", 1, (7, 20), 0.30),
+        ("HR 12 BP 1234", 1, (0, 13), 0.30),
+        ("give 5 or 10 mg 1000 units", 1, (7, 20), 0.30),
         # fmt: on
     ],
 )
@@ -122,8 +133,9 @@ def test_list_length():
     assert len(InVehicleRegistrationRecognizer.in_vehicle_foreign_mission_codes) == 41
 
 
-def test_separated_plate_detected_when_enabled_in_yaml(tmp_path, spacy_nlp_engine):
-    conf = tmp_path / "recognizers.yaml"
+@pytest.fixture(scope="module")
+def yaml_analyzer(tmp_path_factory, spacy_nlp_engine):
+    conf = tmp_path_factory.mktemp("conf") / "recognizers.yaml"
     conf.write_text(
         """
 supported_languages:
@@ -138,12 +150,49 @@ recognizers:
 """
     )
     registry = RecognizerRegistryProvider(conf_file=conf).create_recognizer_registry()
-    analyzer = AnalyzerEngine(registry=registry, nlp_engine=spacy_nlp_engine)
-    text = "Ambulance KA-01-EA-1234 brought the patient in."
+    return AnalyzerEngine(registry=registry, nlp_engine=spacy_nlp_engine)
 
-    results = analyzer.analyze(
+
+@pytest.mark.parametrize(
+    "text, expected_start, expected_end, expected_score",
+    [
+        # Context word before the plate lifts the weak separated match.
+        ("Vehicle no. MH 12 AB 1234 was involved", 12, 25, 0.65),
+        ("RTO registration KA-01-EA-1234 noted.", 17, 30, 0.65),
+        # Unseparated plates are unchanged: validated to the maximum score.
+        ("Vehicle no. MH12AB1234 was involved", 12, 22, 1.0),
+    ],
+)
+def test_when_enabled_in_yaml_then_plate_with_context_scores_high(
+    text, expected_start, expected_end, expected_score, yaml_analyzer
+):
+    """Context words lift separated plates through the YAML-configured analyzer."""
+    results = yaml_analyzer.analyze(
         text, language="en", entities=["IN_VEHICLE_REGISTRATION"]
     )
 
     assert len(results) == 1
-    assert_result(results[0], "IN_VEHICLE_REGISTRATION", 10, 23, 1.0)
+    result = results[0]
+    assert result.entity_type == "IN_VEHICLE_REGISTRATION"
+    assert (result.start, result.end) == (expected_start, expected_end)
+    assert result.score == pytest.approx(expected_score)
+
+
+@pytest.mark.parametrize(
+    "text",
+    [
+        "GIVE 5 OR 10 MG 1000 UNITS",
+        "HR 12 BP 1234",
+        "PO 1 BD 1000",
+        "Ambulance KA-01-EA-1234 brought the patient in.",
+    ],
+)
+def test_when_enabled_in_yaml_then_separated_match_without_context_stays_below_04(
+    text, yaml_analyzer
+):
+    """Without context, separated matches never reach the 0.4 threshold."""
+    results = yaml_analyzer.analyze(
+        text, language="en", entities=["IN_VEHICLE_REGISTRATION"]
+    )
+
+    assert all(result.score < 0.4 for result in results)
