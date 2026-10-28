@@ -1,5 +1,7 @@
 import pytest
 
+from presidio_analyzer import AnalyzerEngine
+from presidio_analyzer.recognizer_registry import RecognizerRegistryProvider
 from tests import assert_result
 from presidio_analyzer.predefined_recognizers import InVehicleRegistrationRecognizer
 
@@ -31,6 +33,20 @@ def entities():
         ("ABNE123456", 0, (), (),),
         ("My Bike's registration number is OD02BA2341 with a lot of text beyond",
          1, (33, 43), 1),
+        # Plates are commonly written with spaces or hyphens between groups.
+        ("MH 12 AB 1234", 1, (0, 13), 1),
+        ("KA-01-EA-1234", 1, (0, 13), 1),
+        ("DL 3C AB 1234", 1, (0, 13), 1),
+        ("DL-3C-AB-1234", 1, (0, 13), 1),
+        ("XY 99 AB 1234", 1, (0, 13), 0.50),
+        ("RTA: vehicle MH 12 AB 1234 vs two-wheeler", 1, (13, 26), 1),
+        # Mixed separators, a 0000 series and vitals of the same shape
+        # are not plates.
+        ("MH 12-AB 1234", 0, (), (),),
+        ("MH 12 AB 0000", 0, (), (),),
+        ("HR 72 BP 120", 0, (), (),),
+        ("give 5 or 10 mg 1000 units", 0, (), (),),
+        ("titrate up 10 mg 1000", 0, (), (),),
         # fmt: on
     ],
 )
@@ -104,3 +120,30 @@ def test_list_length():
     assert len(InVehicleRegistrationRecognizer.in_vehicle_diplomatic_codes) == 3
     assert len(InVehicleRegistrationRecognizer.in_vehicle_armed_forces_codes) == 11
     assert len(InVehicleRegistrationRecognizer.in_vehicle_foreign_mission_codes) == 41
+
+
+def test_separated_plate_detected_when_enabled_in_yaml(tmp_path, spacy_nlp_engine):
+    conf = tmp_path / "recognizers.yaml"
+    conf.write_text(
+        """
+supported_languages:
+  - en
+recognizers:
+  - name: InVehicleRegistrationRecognizer
+    supported_languages:
+      - en
+    type: predefined
+    enabled: true
+    country_code: in
+"""
+    )
+    registry = RecognizerRegistryProvider(conf_file=conf).create_recognizer_registry()
+    analyzer = AnalyzerEngine(registry=registry, nlp_engine=spacy_nlp_engine)
+    text = "Ambulance KA-01-EA-1234 brought the patient in."
+
+    results = analyzer.analyze(
+        text, language="en", entities=["IN_VEHICLE_REGISTRATION"]
+    )
+
+    assert len(results) == 1
+    assert_result(results[0], "IN_VEHICLE_REGISTRATION", 10, 23, 1.0)

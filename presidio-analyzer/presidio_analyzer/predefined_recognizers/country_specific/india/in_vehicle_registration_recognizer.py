@@ -64,6 +64,23 @@ class InVehicleRegistrationRecognizer(PatternRecognizer):
             r"\b[A-Z]{2}\d{2}[A-Z]{1,2}(?!0000)\d{4}\b",
             0.50,
         ),
+        # Plates are usually written with a space or hyphen between groups,
+        # e.g. "MH 12 AB 1234", "KA-01-EA-1234" or "DL 3C AB 1234". The same
+        # separator must be used throughout, and these forms are matched
+        # case-sensitively so lower-case prose such as "or 10 mg 1000" is not
+        # read as a plate.
+        Pattern(
+            "India Vehicle Registration (separated)",
+            r"(?-i:\b[A-Z]{2}([- ])\d{1}"
+            r"(?:[A-Z]{1,3}|\1[A-Z]{1,3}|[A-Z]\1[A-Z]{1,2})"
+            r"\1(?!0000)\d{4}\b)",
+            0.50,
+        ),
+        Pattern(
+            "India Vehicle Registration (separated)",
+            r"(?-i:\b[A-Z]{2}([- ])\d{2}\1[A-Z]{1,2}\1(?!0000)\d{4}\b)",
+            0.50,
+        ),
         Pattern(
             "India Vehicle Registration",
             r"\b[2-9]{1}[1-9]{1}(BH)(?!0000)\d{4}[A-HJ-NP-Z]{2}\b",
